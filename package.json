@@ -1,0 +1,24 @@
+{
+  "name": "moonshot-clone",
+  "version": "1.0.0",
+  "description": "Pixel-perfect, fully interactive clone of Moonshot (makemoonshot.co) — AI video editor for pro short-form edits",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "moonshot",
+    "video-editor",
+    "captions",
+    "ai-video",
+    "motion-graphics"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^8.23.1",
+    "puppeteer-core": "^25.13.0"
+  }
+}

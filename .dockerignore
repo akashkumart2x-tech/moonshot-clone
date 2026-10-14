@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+uploads/*
+!uploads/.gitkeep
+exports/*
+!exports/.gitkeep
+scratch/*
+.git
+.github
+*.log
+test_verification_runs
+rebuilt_test_runs
+.env
+.env.local

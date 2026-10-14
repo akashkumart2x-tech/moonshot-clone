@@ -1,0 +1,2018 @@
+[
+  {
+    "id": "reach-counter",
+    "shelf": "popular",
+    "name": "Number Story",
+    "desc": "Statistics count up beside sliding captions and your screenshot cards.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "magenta-estate",
+    "shelf": "popular",
+    "name": "Gradient Estate",
+    "desc": "Outlined amounts, bold magenta words, and montages of your property photos.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "dimension-story",
+    "shelf": "popular",
+    "name": "Dimension Story",
+    "desc": "Rising, bouncing phrases, raised lettering, and colorful words layered around you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "afterglow",
+    "shelf": "popular",
+    "name": "Afterglow",
+    "desc": "Wide caps with a glowing cyan script, tilted frames, cover flow and light beams.",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "ca-golden-hour",
+    "shelf": "popular",
+    "name": "Golden Hour",
+    "desc": "Large pale-yellow editorial words frame a smaller matching subtitle.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "ca-ghostline",
+    "shelf": "popular",
+    "name": "Ghostline",
+    "desc": "A dense white headline cuts through the subject above a compact subtitle.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "ca-cutout",
+    "shelf": "popular",
+    "name": "Cutout",
+    "desc": "Large centered phrases build across two rows with an inverted hero word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "ml-aura",
+    "shelf": "popular",
+    "name": "Blue Muse",
+    "desc": "Playfair italic, compact support type, and one ice-blue uppercase key.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "agent-story",
+    "shelf": "popular",
+    "name": "Agent Story",
+    "desc": "Big yellow headlines, outlined amounts, glowing icons, and small spoken captions.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "ca-split",
+    "shelf": "popular",
+    "name": "Eclipse",
+    "desc": "Key word locks behind you; subtitles ride your chest.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "social-yellow",
+    "shelf": "popular",
+    "name": "Floodlight",
+    "desc": "Yellow box, black ink on the key word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/popular/yellow-box-d61b55d4f120-poster.jpg"
+  },
+  {
+    "id": "dyn-stretch",
+    "shelf": "popular",
+    "name": "Inception",
+    "desc": "Impact words invert the footage and fill the frame.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/dynamic/dyn-stretch-3a6cdd6468fc-poster.jpg"
+  },
+  {
+    "id": "stack",
+    "shelf": "aiedits",
+    "name": "Boldface",
+    "desc": "Bold captions with a boxed word, rounded video cards, and giant scrolling type.",
+    "cost": "7",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/stack-mix-8549a257125d-poster.webp"
+  },
+  {
+    "id": "bloom",
+    "shelf": "aiedits",
+    "name": "Petal",
+    "desc": "Soft editorial captions, arch frames, and caps titles crossed by script.",
+    "cost": "7",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/bloom-mix-c3790ec795ce-poster.webp"
+  },
+  {
+    "id": "prism",
+    "shelf": "aiedits",
+    "name": "Refract",
+    "desc": "Words that build in, one huge chrome word, and zoom-blur cuts.",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/prism-mix-d86ff7d30e63-poster.webp"
+  },
+  {
+    "id": "elevate",
+    "shelf": "aiedits",
+    "name": "Matinee",
+    "desc": "Cinematic serif captions, script film titles, and soft split screens.",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/elevate-mix-76228dd9e105-poster.webp"
+  },
+  {
+    "id": "riso",
+    "shelf": "aiedits",
+    "name": "Riso",
+    "desc": "Two-ink duotone prints, misregistered titles, halftone and stickers.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/riso-mix-e2d3720b3717-poster.webp"
+  },
+  {
+    "id": "blueprint",
+    "shelf": "aiedits",
+    "name": "Schematic",
+    "desc": "Bold caps with an underlined key word, graph paper, and selection boxes.",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/blueprint-mix-56b32da169a2-poster.webp"
+  },
+  {
+    "id": "darkroom",
+    "shelf": "aiedits",
+    "name": "Darkroom",
+    "desc": "Typed warm captions, film frames, light leaks and a date stamp.",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/darkroom-mix-6261b9e0f0bc-poster.webp"
+  },
+  {
+    "id": "chalk",
+    "shelf": "aiedits",
+    "name": "Blackboard",
+    "desc": "Handwritten caption chips, rear chalk words, and heavy outline hits.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/chalk-mix-59c50372af70-poster.webp"
+  },
+  {
+    "id": "sketch",
+    "shelf": "aiedits",
+    "name": "Marginalia",
+    "desc": "Handwritten captions, circled keywords, and a notebook layout for every section.",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/sketch-mix-3ad2766146ff-poster.webp"
+  },
+  {
+    "id": "paper",
+    "shelf": "aiedits",
+    "name": "Kraft",
+    "desc": "Warm paper collage",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/paper-mix-bb0dd8abeccd-poster.webp"
+  },
+  {
+    "id": "align",
+    "shelf": "aiedits",
+    "name": "Gallery",
+    "desc": "Swiss-minimal mono captions in a white label, and edge-aligned frames.",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/align-mix-8a2784d1325d-poster.webp"
+  },
+  {
+    "id": "archive",
+    "shelf": "aiedits",
+    "name": "Dossier",
+    "desc": "Documentary caps that fill as they are spoken, stacked hooks, and push cuts.",
+    "cost": "8",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/archive-mix-337b70d009e3-poster.webp"
+  },
+  {
+    "id": "zine",
+    "shelf": "aiedits",
+    "name": "Daydream",
+    "desc": "Hand-lettered caps, paper clouds, pencil doodles, and collage.",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/zine-mix-c61108c6d880-poster.webp"
+  },
+  {
+    "id": "notes",
+    "shelf": "aiedits",
+    "name": "Notes",
+    "desc": "Highlighter captions, ticking note cards, screenshots and scribbles.",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/notes-mix-1460bafe5590-poster.webp"
+  },
+  {
+    "id": "vinyl",
+    "shelf": "aiedits",
+    "name": "B-Side",
+    "desc": "Cream label captions, poster bands, and long-shadow cards on a mustard sleeve.",
+    "cost": "7",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/vinyl-mix-5457e60f5bcf-poster.webp"
+  },
+  {
+    "id": "overclock",
+    "shelf": "aiedits",
+    "name": "Overclock",
+    "desc": "Lime italic keywords, outlined caps behind you, scanlines and a viewfinder.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/overclock-mix-9eb1b95b2bc6-poster.webp"
+  },
+  {
+    "id": "feed",
+    "shelf": "aiedits",
+    "name": "Feed",
+    "desc": "Condensed caps with a blue keyword, glass cards that scroll into place, bokeh and neon.",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/feed-mix-43a873e5ff88-poster.webp"
+  },
+  {
+    "id": "arcade",
+    "shelf": "aiedits",
+    "name": "Arcade",
+    "desc": "Glowing neon caps, lightning hooks, kaleidoscope cuts and bloomed B-roll.",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/arcade-mix-d4428b5044b7-poster.webp"
+  },
+  {
+    "id": "masthead",
+    "shelf": "aiedits",
+    "name": "Masthead",
+    "desc": "Editorial captions with a yellow keyword, cover lines, spreads and instant prints.",
+    "cost": "7",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/masthead-mix-60f0cd2d3f2a-poster.webp"
+  },
+  {
+    "id": "editorial-grain",
+    "shelf": "aiedits",
+    "name": "Editorial Grain",
+    "desc": "Serif magazine pages above your head, a red pen on contrasts, lists and numbers, and fine grain.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/editorial-grain-mix-b1f105baf81b-poster.webp"
+  },
+  {
+    "id": "pop-bold",
+    "shelf": "aiedits",
+    "name": "Pop Bold",
+    "desc": "Chunky lime captions, neon blocks for every number, list and question, and a pop-up card on close-ups.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/pop-bold-mix-2f02e65d4f4c-poster.webp"
+  },
+  {
+    "id": "cool-girl",
+    "shelf": "aiedits",
+    "name": "Cool Girl",
+    "desc": "Soft butter captions, serif-italic titles for your numbers, lists and questions, a handwritten note.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/cool-girl-mix-9361aefa0a4f-poster.webp"
+  },
+  {
+    "id": "bobblehead",
+    "shelf": "aiedits",
+    "name": "Bobblehead",
+    "desc": "Your head as a bobbling sticker with a giant mic, sticker labels for every number and list, on denim.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/bobblehead-mix-f0460a46660e-poster.webp"
+  },
+  {
+    "id": "slab",
+    "shelf": "aiedits",
+    "name": "Slab",
+    "desc": "Brick tape captions, giant words that slip behind you, strikes, stamps and a counter.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/slab-mix-d67d732c4caf-poster.webp"
+  },
+  {
+    "id": "moments-glass",
+    "shelf": "aiedits",
+    "name": "Moments Glass",
+    "desc": "Frosted cards land on the word",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/moments-glass-mix-23038a2e6f4f-poster.webp"
+  },
+  {
+    "id": "moments-grain",
+    "shelf": "aiedits",
+    "name": "Moments Grain",
+    "desc": "Paper-slip cards in a serif with red marks, landing on the word.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/moments-grain-mix-098405cd9af8-poster.webp"
+  },
+  {
+    "id": "moments-pop",
+    "shelf": "aiedits",
+    "name": "Moments Pop",
+    "desc": "Bold lime and pink cards with ink outlines and stickers, landing on the word.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/moments-pop-mix-e6e86bcfeecd-poster.webp"
+  },
+  {
+    "id": "studio",
+    "shelf": "aiedits",
+    "name": "Studio",
+    "desc": "A dark room and a lit speaker",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/studio-mix-9050db84aa97-poster.webp"
+  },
+  {
+    "id": "podcast-cutout",
+    "shelf": "aiedits",
+    "name": "Podcast Cutout",
+    "desc": "You cut out on black with a white ring, giant words behind your head and a red banner.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/podcast-cutout-mix-2c8782f5afce-poster.webp"
+  },
+  {
+    "id": "explainer",
+    "shelf": "aiedits",
+    "name": "Explainer",
+    "desc": "A teacher&#x27;s board",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/explainer-mix-1a3c17c3ba6d-poster.webp"
+  },
+  {
+    "id": "grid-notes",
+    "shelf": "aiedits",
+    "name": "Grid Notes",
+    "desc": "Serif notes on maroon grid paper, marks in your captions, and you as a sticker on the board.",
+    "cost": "6",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/grid-notes-mix-95833415bc6b-poster.webp"
+  },
+  {
+    "id": "moodboard",
+    "shelf": "aiedits",
+    "name": "Moodboard",
+    "desc": "Tape, pinned tags and stickers land on the word; lists and definitions pinned on a pastel board.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/moodboard-mix-306198d493bc-poster.webp"
+  },
+  {
+    "id": "keepsake",
+    "shelf": "aiedits",
+    "name": "Keepsake",
+    "desc": "Soft print moments in serif and script, a letter in an envelope with a wax seal, an ornate frame.",
+    "cost": "5",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/keepsake-mix-0b7198d97195-poster.webp"
+  },
+  {
+    "id": "cutout-board",
+    "shelf": "aiedits",
+    "name": "Cutout Board",
+    "desc": "Green graph paper, a traced cutout, and mixed paper-label captions around you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/cutout-board-12b29e736d66-poster.jpg"
+  },
+  {
+    "id": "luma-word",
+    "shelf": "real-estate",
+    "name": "Luma Word",
+    "desc": "A bold word rises into place with blue and white ink that responds to your video.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "amber-pass",
+    "shelf": "real-estate",
+    "name": "Amber Pass",
+    "desc": "Warm amber lettering responds to the video while small words glide across it.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "glass-headline",
+    "shelf": "real-estate",
+    "name": "Glass Headline",
+    "desc": "Two clean white lines lead into a green headline that responds to the video.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "spatial-red",
+    "shelf": "spatial",
+    "name": "Spatial Red",
+    "desc": "Small warm words and huge red uppercase heroes posted around your shot, tracked to the camera.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/spatial-red-9b76069225b3-poster.jpg"
+  },
+  {
+    "id": "spatial-yellow",
+    "shelf": "spatial",
+    "name": "Spatial Yellow",
+    "desc": "Heavy white lines build around you while glowing yellow words slide in; plain words come one at a time.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/spatial-yellow-addc696d475a-poster.jpg"
+  },
+  {
+    "id": "spatial-white",
+    "shelf": "spatial",
+    "name": "Spatial White",
+    "desc": "Words arc over your head and across your chest in 3D; the red one lands biggest.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/spatial-white-9def32950388-poster.jpg"
+  },
+  {
+    "id": "ca-sprayline",
+    "shelf": "contentaware",
+    "name": "Sprayline",
+    "desc": "A red spray-painted phrase fills the frame behind clean serif captions.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/sprayline-v2-poster.jpg"
+  },
+  {
+    "id": "ca-acid-slide",
+    "shelf": "contentaware",
+    "name": "Lime Swipe",
+    "desc": "A black italic phrase slides across a sharp lime plate.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/lime-swipe-v3-poster.jpg"
+  },
+  {
+    "id": "ca-monument",
+    "shelf": "contentaware",
+    "name": "Monument",
+    "desc": "A lime uppercase hit drops above a loose handwritten subtitle.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/monument-v2-poster.jpg"
+  },
+  {
+    "id": "ca-sunburst",
+    "shelf": "contentaware",
+    "name": "Sunburst",
+    "desc": "A bright yellow headline bounces behind a small serif subtitle.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/sunburst-v3-poster.jpg"
+  },
+  {
+    "id": "ca-crimson",
+    "shelf": "contentaware",
+    "name": "Crimson",
+    "desc": "A red editorial phrase sits behind a soft-white matching subtitle.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/crimson-v2-poster.jpg"
+  },
+  {
+    "id": "ca-red",
+    "shelf": "contentaware",
+    "name": "Gatekeep",
+    "desc": "White subtitles up front, a royal-blue brush-script word behind you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-red-6ee6408780ae-poster.jpg"
+  },
+  {
+    "id": "ca-yellow",
+    "shelf": "contentaware",
+    "name": "Retro Cut",
+    "desc": "Typewriter subtitles in front, an 8-bit pixel word behind you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-yellow-921777b92c5c-poster.jpg"
+  },
+  {
+    "id": "ca-editorial",
+    "shelf": "contentaware",
+    "name": "Sticker",
+    "desc": "Cream subtitles in front, a chunky comic word behind you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-editorial-f23cc9529991-poster.jpg"
+  },
+  {
+    "id": "ca-blue",
+    "shelf": "contentaware",
+    "name": "Calligraph",
+    "desc": "Soft-white subtitles, an ornate cobalt calligraphy word behind you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-blue-c9268363e9af-poster.jpg"
+  },
+  {
+    "id": "ca-mix",
+    "shelf": "contentaware",
+    "name": "Soundwave",
+    "desc": "Warm-white subtitles in front, a fat rounded olive word behind you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-mix-c5b8aea4dd2a-poster.jpg"
+  },
+  {
+    "id": "ca-neon",
+    "shelf": "contentaware",
+    "name": "Signal",
+    "desc": "Neon-green impact word behind you, plain white subtitles in front.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-neon-39f5be0f2f3c-poster.jpg"
+  },
+  {
+    "id": "kumar",
+    "shelf": "contentaware",
+    "name": "Kumar",
+    "desc": "A big red editorial serif locks behind you; clean white subtitles in front.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/kumar-360b77edb0ba-poster.jpg"
+  },
+  {
+    "id": "depth",
+    "shelf": "contentaware",
+    "name": "Deep Focus",
+    "desc": "Text sits in real 3D space behind you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/depth-bfdfff4acd47-poster.jpg"
+  },
+  {
+    "id": "tailored-type",
+    "shelf": "contentaware",
+    "name": "Tailored Type",
+    "desc": "Magazine type pairs clean context, sweeping script, and tall condensed headlines.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "purple-stack",
+    "shelf": "contentaware",
+    "name": "Purple Stack",
+    "desc": "Normal subtitles alternate with mixed-font lavender headlines behind you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "lime-depth",
+    "shelf": "contentaware",
+    "name": "Lime Depth",
+    "desc": "A white setup line stays in front while its lime payoff passes behind you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "pastel-lens",
+    "shelf": "contentaware",
+    "name": "Pastel Fisheye",
+    "desc": "Pastel editorial type bends around you with a fisheye lens.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/pastel-lens-24760e45ae50-poster.jpg"
+  },
+  {
+    "id": "blush-lab",
+    "shelf": "playful",
+    "name": "Blush Lab",
+    "desc": "Tight blush captions type across two rows, then land on one butter word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/blush-lab-bd254ebcc90d-poster.jpg"
+  },
+  {
+    "id": "butter-hook",
+    "shelf": "playful",
+    "name": "Butter Hook",
+    "desc": "White word-timed subtitles lead into one sliding butter-yellow hook.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "pink-notes",
+    "shelf": "playful",
+    "name": "Pink Notes",
+    "desc": "Clean subtitles switch into handwritten labels, pink titles, and curved yellow keywords.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "sticker-stack",
+    "shelf": "playful",
+    "name": "Sticker Stack",
+    "desc": "Brown lowercase words stack on pinned white and yellow sticker outlines.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "fur-text",
+    "shelf": "playful",
+    "name": "Pink Fur",
+    "desc": "Soft pink long-pile letters lifted above the footage.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "plush-text",
+    "shelf": "playful",
+    "name": "Pink Plush",
+    "desc": "Vivid pink short-nap velvet with a rounded padded edge.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "sheep-text",
+    "shelf": "playful",
+    "name": "Sheep Bouclé",
+    "desc": "Cream bouclé letters with the video&#x27;s irregular blue patches.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "raised-fur",
+    "shelf": "playful",
+    "name": "Raised Fur 3D",
+    "desc": "Pale blue fur with the video&#x27;s stronger elevated depth.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "sculpted-fur-text",
+    "shelf": "playful",
+    "name": "Sculpted Fur",
+    "desc": "Soft pink long-pile letters lifted above the footage.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "sculpted-plush-text",
+    "shelf": "playful",
+    "name": "Sculpted Plush",
+    "desc": "Vivid pink short-nap velvet with a rounded padded edge.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "sculpted-sheep-text",
+    "shelf": "playful",
+    "name": "Sculpted Bouclé",
+    "desc": "Cream bouclé letters with the video&#x27;s irregular blue patches.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "sculpted-raised-fur",
+    "shelf": "playful",
+    "name": "Sculpted Blue Fur",
+    "desc": "Pale blue fur with the video&#x27;s stronger elevated depth.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "satin-pillow-text",
+    "shelf": "playful",
+    "name": "Satin Pillow",
+    "desc": "Rose satin cushion letters with soft highlights and stitched edges.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "whipped-cream-text",
+    "shelf": "playful",
+    "name": "Whipped Cream",
+    "desc": "Piped ivory lettering with curved ridges and pastel sprinkles.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "soft-fluffy-text",
+    "shelf": "playful",
+    "name": "Soft Fluffy",
+    "desc": "Rounded lavender fleece letters with a softly raised face.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "play-butter",
+    "shelf": "playful",
+    "name": "Butter",
+    "desc": "Tiny white asides up top; big butter-yellow words lock behind you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/playful/play-butter-778a36979f60-poster.jpg"
+  },
+  {
+    "id": "play-moxie",
+    "shelf": "playful",
+    "name": "Pop Off",
+    "desc": "One font, two colors",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/playful/play-moxie-d60ad0c0abef-poster.jpg"
+  },
+  {
+    "id": "play-curve",
+    "shelf": "playful",
+    "name": "Ribbon",
+    "desc": "A mix",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/playful/play-curve-2ad44891e2d9-poster.jpg"
+  },
+  {
+    "id": "play-cursive",
+    "shelf": "playful",
+    "name": "Cursive",
+    "desc": "Butter script + rounded heroes around you; tiny white ticker up top.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/playful/play-cursive-87c4d8d9d6bb-poster.jpg"
+  },
+  {
+    "id": "ca-fireline",
+    "shelf": "multiline",
+    "name": "Fireline",
+    "desc": "Handwritten white lines build into a rising yellow title.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ca-fireline-0f437c1bd3d7-poster.jpg"
+  },
+  {
+    "id": "ca-focusline",
+    "shelf": "multiline",
+    "name": "Focusline",
+    "desc": "Editorial caption lockups that respond to each spoken idea.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/focusline-39a3fc045ff4-poster.jpg"
+  },
+  {
+    "id": "ml-halo",
+    "shelf": "multiline",
+    "name": "Moonbeam",
+    "desc": "A glowing hero spans two of three fixed caption lanes.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-halo-f757575b547c-poster.jpg"
+  },
+  {
+    "id": "ml-illusion",
+    "shelf": "multiline",
+    "name": "Supernova",
+    "desc": "Small white context with one oversized editorial hit.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-illusion-fe189110d31e-poster.jpg"
+  },
+  {
+    "id": "ml-masala",
+    "shelf": "multiline",
+    "name": "Gold Centre",
+    "desc": "Compact context with a hard gold all-caps centre word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-masala-bc16800c8ee4-poster.jpg"
+  },
+  {
+    "id": "ml-swiss",
+    "shelf": "multiline",
+    "name": "Diagonal",
+    "desc": "Inter Black roles in a diagonal white-and-yellow editorial lockup.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-swiss-7940480c30a7-poster.jpg"
+  },
+  {
+    "id": "ml-redline",
+    "shelf": "multiline",
+    "name": "Red Shift",
+    "desc": "A tall red hero sits between two restrained white rows.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-redline-8feba50e4943-poster.jpg"
+  },
+  {
+    "id": "ml-scribble",
+    "shelf": "multiline",
+    "name": "Margin Note",
+    "desc": "Loose handwritten rows with one warm marker-like word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-scribble-c011a6fb17ab-poster.jpg"
+  },
+  {
+    "id": "ml-blockbuster",
+    "shelf": "multiline",
+    "name": "Headliner",
+    "desc": "Red condensed type against luminous white script.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-blockbuster-377e68e4da16-poster.jpg"
+  },
+  {
+    "id": "ml-marquee",
+    "shelf": "multiline",
+    "name": "Marquee",
+    "desc": "Red condensed words open into luminous white script.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "ruby-rise",
+    "shelf": "multiline",
+    "name": "Ruby Rise",
+    "desc": "Ivory italic words rise above large red emphasis.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "twin-weight",
+    "shelf": "multiline",
+    "name": "Twin Weight",
+    "desc": "Two white lines stay in place while the spoken line turns bold.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "handwritten-note",
+    "shelf": "multiline",
+    "name": "Handwritten Note",
+    "desc": "White handwriting reveals with a gentle wobble and coral drawn emphasis.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "neon-circuit",
+    "shelf": "multiline",
+    "name": "Neon Circuit",
+    "desc": "Technical white caps cut to a luminous yellow keyword.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "doodle-script",
+    "shelf": "multiline",
+    "name": "Doodle Script",
+    "desc": "Bright handwritten accents, drawn flourishes and varied word entrances.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "orange-cut",
+    "shelf": "multiline",
+    "name": "Orange Cut",
+    "desc": "White bold captions on a compact orange plate.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "gold-punch",
+    "shelf": "multiline",
+    "name": "Gold Punch",
+    "desc": "Yellow geometric caps settle above a crisp dark extruded edge.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "violet-voice",
+    "shelf": "multiline",
+    "name": "Violet Voice",
+    "desc": "Bare violet caps with a soft layered black shadow.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "cream-focus",
+    "shelf": "multiline",
+    "name": "Cream Focus",
+    "desc": "Soft cream lettering builds into oversized emphasis across two lines.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "lime-stack",
+    "shelf": "multiline",
+    "name": "Lime Stack",
+    "desc": "Lowercase words rise into a dense block with lime emphasis.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "citrus-chrome",
+    "shelf": "multiline",
+    "name": "Citrus Chrome",
+    "desc": "Large lime lettering catches a pale stripe of light.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "ink-card",
+    "shelf": "multiline",
+    "name": "Ink Card",
+    "desc": "Words darken as you speak inside a white rounded card.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "mint-bounce",
+    "shelf": "multiline",
+    "name": "Mint Bounce",
+    "desc": "A mint chip bounces behind each spoken word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "story-notes",
+    "shelf": "multiline",
+    "name": "Story Notes",
+    "desc": "Headlines, handwritten replies and drawn circles tell the story.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "amber-cast",
+    "shelf": "multiline",
+    "name": "Amber Cast",
+    "desc": "Orange emphasis and silver context fade into dark metallic edges.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "black-ink",
+    "shelf": "multiline",
+    "name": "Black Ink",
+    "desc": "Solid black Anton lettering leaves a soft dark edge.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "gold-settle",
+    "shelf": "multiline",
+    "name": "Gold Settle",
+    "desc": "Gold block letters grow gently into place.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "stacked-notes",
+    "shelf": "multiline",
+    "name": "Stacked Notes",
+    "desc": "Separate black caption cards appear one line at a time.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "floating-aside",
+    "shelf": "multiline",
+    "name": "Floating Aside",
+    "desc": "White and gold lines float beside the speaker.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "lime-impact",
+    "shelf": "multiline",
+    "name": "Lime Impact",
+    "desc": "Bold white lines make room for larger lime words.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "ice-flicker",
+    "shelf": "multiline",
+    "name": "Ice Flicker",
+    "desc": "Pale wide lettering turns and flickers into view.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "pink-marker",
+    "shelf": "multiline",
+    "name": "Pink Marker",
+    "desc": "A rough pink strip grows beneath the words as you speak.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "ml-moonshot",
+    "shelf": "multiline",
+    "name": "Moonshot Signature",
+    "desc": "White lines move in front and behind you, with held words and occasional spoken neon highlights.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "pair-tempting-switzer",
+    "shelf": "multiline",
+    "name": "Tempting Swiss",
+    "desc": "A formal script accent overlaps a heavy Swiss-style multiline lockup.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "pair-athelas-vanguard",
+    "shelf": "multiline",
+    "name": "Athelas Vanguard",
+    "desc": "Quiet book-serif rows frame a large condensed display word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "pair-inter-times",
+    "shelf": "multiline",
+    "name": "Inter Times",
+    "desc": "Small clean sans rows frame a sweeping italic editorial hero.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "pair-arial-epic",
+    "shelf": "multiline",
+    "name": "Arial Epic",
+    "desc": "Neutral supporting rows build toward a squared futuristic hero.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "pair-shadow-balboa",
+    "shelf": "multiline",
+    "name": "Shadow Balboa",
+    "desc": "Loose handwriting overlaps tall, narrow display caps across multiple rows.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "pair-archivo-abril",
+    "shelf": "multiline",
+    "name": "Archivo Abril",
+    "desc": "Heavy grotesque rows frame a high-contrast serif hero.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "ml-powder-stack",
+    "shelf": "multiline",
+    "name": "Powder Stack",
+    "desc": "Powder-blue details gather into a tight pastel stack with one broad cream headline.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "ml-white-rise",
+    "shelf": "multiline",
+    "name": "White Rise",
+    "desc": "Simple white lines rise, fade in, and accumulate around one larger phrase.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "ml-gold-slide",
+    "shelf": "multiline",
+    "name": "Gold Slide",
+    "desc": "Small white setup text over a bold gold-gradient line that rises in word by word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "dyn-linen",
+    "shelf": "dynamic",
+    "name": "Linen",
+    "desc": "Letters type on behind a translucent cursor.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/dynamic/dyn-linen-d72b81f2951c-poster.jpg"
+  },
+  {
+    "id": "dyn-quill",
+    "shelf": "dynamic",
+    "name": "Quill",
+    "desc": "A script opener flickers over typed supporting words.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/dynamic/dyn-quill-52d1e74a21f8-poster.jpg"
+  },
+  {
+    "id": "dyn-storyline",
+    "shelf": "dynamic",
+    "name": "Storyline",
+    "desc": "Serif key words slide between clean story beats.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/dynamic/dyn-storyline-7a2a881e69ee-poster.jpg"
+  },
+  {
+    "id": "dyn-glide",
+    "shelf": "dynamic",
+    "name": "Glide",
+    "desc": "A bright script word glides through quiet context.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/dynamic/dyn-glide-91b40e718ccf-poster.jpg"
+  },
+  {
+    "id": "dyn-wiggle",
+    "shelf": "dynamic",
+    "name": "Wiggle",
+    "desc": "Hand-painted words trace an organic eight-step path.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/dynamic/dyn-wiggle-94f93b6efac0-poster.jpg"
+  },
+  {
+    "id": "hero-orbit",
+    "shelf": "dynamic",
+    "name": "Hero Orbit",
+    "desc": "A bold headline pops into place with smaller words tucked above, below and sideways.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "solar-stack",
+    "shelf": "dynamic",
+    "name": "Solar Stack",
+    "desc": "An orange headline slides between two white italic words.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "scarlet-sweep",
+    "shelf": "dynamic",
+    "name": "Scarlet Sweep",
+    "desc": "White words rise above an italic phrase as its red background fills in.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "blue-rebound",
+    "shelf": "dynamic",
+    "name": "Blue Rebound",
+    "desc": "Three glowing rows glide in from opposite sides and settle into place.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "word-balance",
+    "shelf": "dynamic",
+    "name": "Word Balance",
+    "desc": "The longest word grows large while smaller words tuck around it.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "serif-glow",
+    "shelf": "dynamic",
+    "name": "Serif Glow",
+    "desc": "Soft white captions rise around a colorful italic word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "chrome-cascade",
+    "shelf": "dynamic",
+    "name": "Chrome Cascade",
+    "desc": "Small white lines surround bold yellow and raised blue words.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "neon-press",
+    "shelf": "dynamic",
+    "name": "Neon Press",
+    "desc": "Tall red letters land above a glowing white line.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "power-drop",
+    "shelf": "dynamic",
+    "name": "Power Drop",
+    "desc": "Three bold words drop into a tight vertical stack.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "wide-burst",
+    "shelf": "dynamic",
+    "name": "Wide Burst",
+    "desc": "Yellow and white phrases fly into a changing headline layout.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "azure-slant",
+    "shelf": "dynamic",
+    "name": "Azure Slant",
+    "desc": "A white line sits above a slanted blue phrase with a bright center.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "mint-hit",
+    "shelf": "dynamic",
+    "name": "Blue Punch",
+    "desc": "Bold blue capitals punch outward on each spoken word, then settle into one line.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "lime-label",
+    "shelf": "dynamic",
+    "name": "Lime Label",
+    "desc": "Small white words frame a bold phrase on a lime background.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "paper-stamp",
+    "shelf": "dynamic",
+    "name": "Paper Stamp",
+    "desc": "Striped red letters sit inside a cut-paper border and hard shadow.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "type-shuffle",
+    "shelf": "dynamic",
+    "name": "Type Shuffle",
+    "desc": "Bold white and blue words build eight different arrangements.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "close-story",
+    "shelf": "dynamic",
+    "name": "Close Story",
+    "desc": "Small setup words tuck against a bold white headline as each phrase rises into place.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "signal-line",
+    "shelf": "dynamic",
+    "name": "Signal Line",
+    "desc": "A compact line snaps into focus with vivid color on the words that matter.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "slow-mornings",
+    "shelf": "editorial",
+    "name": "Slow Mornings",
+    "desc": "Cream italic words softly fade into view.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "still-time",
+    "shelf": "editorial",
+    "name": "Still Time",
+    "desc": "Bold cream capitals rise into view together.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "chapter-one",
+    "shelf": "editorial",
+    "name": "Chapter 01",
+    "desc": "Cream typewriter letters appear as you speak.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "wish-existed",
+    "shelf": "editorial",
+    "name": "Wish Existed",
+    "desc": "Heavy sky-blue lowercase, set tight.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "whimsical",
+    "shelf": "editorial",
+    "name": "Whimsical",
+    "desc": "White looping script, light and airy.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "be-curious",
+    "shelf": "editorial",
+    "name": "Be Curious",
+    "desc": "Lime pixel type, like an old handheld.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "aura",
+    "shelf": "editorial",
+    "name": "Aura",
+    "desc": "Serif-italic aside over a huge ice-blue word behind you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/aura-51f8cca1b2db-poster.jpg"
+  },
+  {
+    "id": "delhi",
+    "shelf": "editorial",
+    "name": "Delhi",
+    "desc": "Clean sans, then the key word in glowing serif italic.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/delhi-6070f6da3a1a-poster.jpg"
+  },
+  {
+    "id": "soft-script",
+    "shelf": "editorial",
+    "name": "Soft Script",
+    "desc": "Bold white sans with key words in Playfair italic.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/soft-script-00585554bb3a-poster.jpg"
+  },
+  {
+    "id": "swiss",
+    "shelf": "editorial",
+    "name": "Swiss",
+    "desc": "White lowercase over hard yellow caps. Pure grid.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/swiss-cd1dc21b0ae9-poster.jpg"
+  },
+  {
+    "id": "masala",
+    "shelf": "editorial",
+    "name": "Masala",
+    "desc": "A whisper of context, then one huge gold word behind you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/masala-2473265fea61-poster.jpg"
+  },
+  {
+    "id": "chrome",
+    "shelf": "editorial",
+    "name": "Chrome",
+    "desc": "Liquid-metal caps locked behind the speaker.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/chrome-05a4cf214916-poster.jpg"
+  },
+  {
+    "id": "serif-quote",
+    "shelf": "editorial",
+    "name": "Serif Quote",
+    "desc": "Editorial serif, sentence case, italic amber emphasis.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/serif-quote-6702eab89062-poster.jpg"
+  },
+  {
+    "id": "liquid-glass",
+    "shelf": "fx",
+    "name": "Liquid Glass",
+    "desc": "A translucent frosted-glass pill with a soft luminous rim.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/liquid-glass-23135068026f-poster.jpg"
+  },
+  {
+    "id": "deep-glow",
+    "shelf": "fx",
+    "name": "Deep Glow",
+    "desc": "Magenta neon caps that burn through dark footage.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "terminal",
+    "shelf": "fx",
+    "name": "Terminal",
+    "desc": "Phosphor-green mono that types itself in.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "eight-bit",
+    "shelf": "fx",
+    "name": "8-Bit",
+    "desc": "Arcade pixel type for gaming clips.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "glitch-pop",
+    "shelf": "fx",
+    "name": "Glitch Pop",
+    "desc": "Chromatic RGB split on every spoken word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "comic-burst",
+    "shelf": "fx",
+    "name": "Comic Burst",
+    "desc": "Tilted comic caps; heroes stamp on yellow.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "acid-lesson",
+    "shelf": "creators",
+    "name": "Acid Lesson",
+    "desc": "Rounded tutorial type in acid lime, oxblood red, and warm paper cream.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "sketch-track",
+    "shelf": "creators",
+    "name": "Sketch Track",
+    "desc": "Yellow sketched hero words rise out of compact white handwritten subtitles.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "hormozi-green",
+    "shelf": "creators",
+    "name": "Hormozi",
+    "desc": "Acid-green gradient caps; the key word punches out.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/hormozi-green-6125e0851659-poster.jpg"
+  },
+  {
+    "id": "aurora",
+    "shelf": "creators",
+    "name": "Aurora",
+    "desc": "White caps with yellow and green halo emphasis.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "heatwave",
+    "shelf": "creators",
+    "name": "Heatwave",
+    "desc": "Tracked white caps over a large red serif gradient.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "ultraviolet",
+    "shelf": "creators",
+    "name": "Ultraviolet",
+    "desc": "Yellow-gradient caps paired with white brush script.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "color-block",
+    "shelf": "creators",
+    "name": "Color Block",
+    "desc": "Lowercase Inter with one cream-and-blue banded word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "loudline",
+    "shelf": "creators",
+    "name": "Loudline",
+    "desc": "Up to nine words brighten from grey to white as they are spoken.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "resolve",
+    "shelf": "creators",
+    "name": "Resolve",
+    "desc": "A huge Montserrat word meets a red handwritten accent.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "property-pop",
+    "shelf": "creators",
+    "name": "Property Pop",
+    "desc": "Magenta hero words pass behind you while typed and sliding context stays in front.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "footage-blend",
+    "shelf": "creators",
+    "name": "Footage Blend",
+    "desc": "One bold word blends against the footage behind it.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "magenta-rise",
+    "shelf": "creators",
+    "name": "Magenta Rise",
+    "desc": "A magenta main word rises over a sliding white subline.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "amber-cross",
+    "shelf": "creators",
+    "name": "Amber Cross",
+    "desc": "White Inter crosses an amber gradient hero word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "red-editorial",
+    "shelf": "creators",
+    "name": "Red Editorial",
+    "desc": "Two Playfair rows with one red italic turn.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "outline-reveal",
+    "shelf": "creators",
+    "name": "Outline Reveal",
+    "desc": "Outlined Anton words fill white as they are spoken.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "candy-pop",
+    "shelf": "creators",
+    "name": "Candy Pop",
+    "desc": "Two pink bubble words with a chocolate outline.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "paper-cut",
+    "shelf": "creators",
+    "name": "Paper Cut",
+    "desc": "Every letter lands as a different paper cutout.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "beast-mode",
+    "shelf": "creators",
+    "name": "Beast Mode",
+    "desc": "Comic caps with a fat outline; keywords glow green.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/beast-mode-2d237ed13902-poster.jpg"
+  },
+  {
+    "id": "study-pill",
+    "shelf": "creators",
+    "name": "Study Pill",
+    "desc": "Calm lowercase; the spoken word rides a white chip.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "old-money",
+    "shelf": "creators",
+    "name": "Old Money",
+    "desc": "White lowercase; the spoken word just gets heavier.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "karaoke-bar",
+    "shelf": "creators",
+    "name": "Karaoke",
+    "desc": "The colour wipes across each word as it&#x27;s said.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/karaoke-bar-e131c4108949-poster.jpg"
+  },
+  {
+    "id": "tracked",
+    "shelf": "creators",
+    "name": "Tracked",
+    "desc": "Small, wide-tracked caps — a cinematic chapter card.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "desi-bold",
+    "shelf": "desi",
+    "name": "Desi Bold",
+    "desc": "Hindi and roman in one face; hero word behind you.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/desi-bold-856caf2b564d-poster.jpg"
+  },
+  {
+    "id": "tabahi",
+    "shelf": "desi",
+    "name": "Tabahi",
+    "desc": "Full hype",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/tabahi-d28888d73852-poster.jpg"
+  },
+  {
+    "id": "social-word-pink",
+    "shelf": "social",
+    "name": "Rose Flare",
+    "desc": "White text, soft rose key word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "social-card",
+    "shelf": "social",
+    "name": "Clapboard",
+    "desc": "Black text on a clean white card.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "social-3d",
+    "shelf": "social",
+    "name": "Parallax",
+    "desc": "Blue italic, white outline, 3D edge.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "social-pink",
+    "shelf": "social",
+    "name": "Magenta Gel",
+    "desc": "Hot-pink box on the key word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "social-green-word",
+    "shelf": "social",
+    "name": "Phosphor",
+    "desc": "Outlined white caps, green key word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "social-card-purple",
+    "shelf": "social",
+    "name": "Violet Slate",
+    "desc": "White card, purple key word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "social-caps",
+    "shelf": "social",
+    "name": "Daylight",
+    "desc": "Plain white all-caps with a soft shadow.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "social-mint",
+    "shelf": "social",
+    "name": "Photon",
+    "desc": "White text, bright lime key word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "social-outline",
+    "shelf": "social",
+    "name": "Contour",
+    "desc": "White caps with a thick black outline.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "social-block",
+    "shelf": "social",
+    "name": "Graphite",
+    "desc": "Soft grey box, rose key word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "social-green",
+    "shelf": "social",
+    "name": "Greenscreen",
+    "desc": "Green box on the key word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "social-greenbox",
+    "shelf": "social",
+    "name": "Neon Reel",
+    "desc": "Whole line on a lime bar, black ink.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "social-purple",
+    "shelf": "social",
+    "name": "Violet Box",
+    "desc": "Violet box on the key word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "social-soft",
+    "shelf": "social",
+    "name": "Halo",
+    "desc": "White caps with a soft halo glow.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "social-glow",
+    "shelf": "social",
+    "name": "Pink Neon",
+    "desc": "White caps with a pink neon glow.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "social-outline-heavy",
+    "shelf": "social",
+    "name": "Blackout",
+    "desc": "White caps, heavy black outline.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "social-lime-italic",
+    "shelf": "social",
+    "name": "Tilt",
+    "desc": "Lime italic caps with a dark outline.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "biz-bar",
+    "shelf": "business",
+    "name": "Anchor",
+    "desc": "White text on a dark broadcast bar.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "biz-bold",
+    "shelf": "business",
+    "name": "Keyframe",
+    "desc": "Confident bold statement text.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "biz-subtitle",
+    "shelf": "business",
+    "name": "Teleprompt",
+    "desc": "Quiet, legible lower-third.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "biz-soft",
+    "shelf": "business",
+    "name": "Penumbra",
+    "desc": "White with a deep, soft drop shadow.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "biz-light",
+    "shelf": "business",
+    "name": "Softbox",
+    "desc": "Soft translucent bar, easy to read.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "biz-caps",
+    "shelf": "business",
+    "name": "Headline",
+    "desc": "All-caps, sober, authoritative.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "biz-italic",
+    "shelf": "business",
+    "name": "Byline",
+    "desc": "Editorial italic with a soft shadow.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "podcast-duo",
+    "shelf": "business",
+    "name": "Podcast Duo",
+    "desc": "Two-tone captions that track who&#x27;s talking.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "creator-badge",
+    "shelf": "business",
+    "name": "Creator Badge",
+    "desc": "A name-card lower third that slides in.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "spotlight-card",
+    "shelf": "business",
+    "name": "Spotlight Card",
+    "desc": "Black on a white card; the keyword boxed in yellow.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "whisper",
+    "shelf": "business",
+    "name": "Whisper",
+    "desc": "Thin lowercase, barely there. Lets the face lead.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "retro-yellow",
+    "shelf": "retro",
+    "name": "Vignette",
+    "desc": "Yellow italic, black outline.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "retro-blackbox",
+    "shelf": "retro",
+    "name": "Letterbox",
+    "desc": "White text on a solid black box.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "retro-pop",
+    "shelf": "retro",
+    "name": "Flashbulb",
+    "desc": "Bold yellow with a black outline.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "retro-italic-box",
+    "shelf": "retro",
+    "name": "Splice",
+    "desc": "Italic white text on a black box.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "retro-yellow-word",
+    "shelf": "retro",
+    "name": "Filmstrip",
+    "desc": "Black box, yellow active word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "retro-serif",
+    "shelf": "retro",
+    "name": "Newsreel",
+    "desc": "Heavy white italic with a clean outline.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "kinetic",
+    "shelf": "retro",
+    "name": "Strobe",
+    "desc": "Words stamp in one by one — the big ones take the frame.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "pulse",
+    "shelf": "retro",
+    "name": "Shutter",
+    "desc": "Huge hook word with controlled emphasis.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "spring",
+    "shelf": "retro",
+    "name": "Dolly",
+    "desc": "Small setup, big keyword slides forward.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "sweep",
+    "shelf": "retro",
+    "name": "Searchlight",
+    "desc": "A light band scans across the words.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "wave",
+    "shelf": "retro",
+    "name": "Handheld",
+    "desc": "Handwritten emphasis for creator clips.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "bounce",
+    "shelf": "retro",
+    "name": "Jump Cut",
+    "desc": "One-word punchlines held big at center.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "pair-impact",
+    "shelf": "retro",
+    "name": "Double Exposure",
+    "desc": "Clean sans, key words punch out in a condensed face.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "pair-editorial",
+    "shelf": "retro",
+    "name": "Folio",
+    "desc": "Modern sans with a display-serif accent word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "pair-clean",
+    "shelf": "retro",
+    "name": "Telephoto",
+    "desc": "Minimal sans, key words in tall condensed caps.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "pair-slab",
+    "shelf": "retro",
+    "name": "Slate",
+    "desc": "Clean sans with one heavy slab statement word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "pair-marker",
+    "shelf": "retro",
+    "name": "Handcam",
+    "desc": "Vlog sans with a hand-marker key word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "pair-script",
+    "shelf": "retro",
+    "name": "Soft Cut",
+    "desc": "Rounded sans with a soft script accent.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "pair-geometric",
+    "shelf": "retro",
+    "name": "Prism",
+    "desc": "Friendly geometric sans, bold rounded accent.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  },
+  {
+    "id": "pair-russo",
+    "shelf": "retro",
+    "name": "Telecast",
+    "desc": "Sporty sans with a bold square-caps accent.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/dimension-story-ba1acfd1da9d-poster.jpg"
+  },
+  {
+    "id": "pair-comic",
+    "shelf": "retro",
+    "name": "Flashframe",
+    "desc": "Heavy sans with a comic-book punch word.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/templates/afterglow-mix-e0415548f933-poster.webp"
+  },
+  {
+    "id": "pair-throwback",
+    "shelf": "retro",
+    "name": "Sepia",
+    "desc": "Condensed sans with a typewriter accent.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/golden-hour-v2-poster.jpg"
+  },
+  {
+    "id": "pair-lobster",
+    "shelf": "retro",
+    "name": "Crosscut",
+    "desc": "Casual sans with a flowing script accent.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ghostline-v2-poster.jpg"
+  },
+  {
+    "id": "pair-caveat",
+    "shelf": "retro",
+    "name": "Footnote",
+    "desc": "Clean sans with a personal handwritten accent.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/contentaware/ca-cutout-1ee462e5c02a-poster.jpg"
+  },
+  {
+    "id": "jelly-pop",
+    "shelf": "retro",
+    "name": "Jelly Pop",
+    "desc": "Each hook word squashes and stretches as it lands.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/multiline/ml-aura-061aa4b4fa90-poster.jpg"
+  },
+  {
+    "id": "slide-hype",
+    "shelf": "retro",
+    "name": "Slide Hype",
+    "desc": "Bold hero lines land displaced for an off-kilter punch.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/behind/ca-split-4e05f91fa280-poster.jpg"
+  },
+  {
+    "id": "wiggle-marker",
+    "shelf": "retro",
+    "name": "Wiggle Marker",
+    "desc": "Handwritten words rock back and forth on the beat.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/agent-story-369e97b47574-poster.jpg"
+  },
+  {
+    "id": "wobble-bubble",
+    "shelf": "retro",
+    "name": "Wobble",
+    "desc": "Wobbly bubble caps, lime fill with a bold dark outline.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/reach-counter-7d8ceee71a96-poster.jpg"
+  },
+  {
+    "id": "vallah",
+    "shelf": "retro",
+    "name": "Vallah",
+    "desc": "The original Vallah paintbrush captions — yellow caveat-brush wordmark, no background FX.",
+    "cost": "0.2",
+    "poster": "https://cdn.kaizynn.com/moonshot/landing/real-estate/magenta-estate-3541bcb5526e-poster.jpg"
+  }
+]

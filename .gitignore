@@ -1,0 +1,14 @@
+node_modules/
+uploads/
+!uploads/.gitkeep
+exports/
+!exports/.gitkeep
+scratch/
+rebuilt_test_runs/
+test_verification_runs/
+.env
+.env.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store

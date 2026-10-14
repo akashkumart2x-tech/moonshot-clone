@@ -1,0 +1,32 @@
+[
+  {
+    "model": "faster-whisper base (Local CPU)",
+    "latency_sec": 57.29,
+    "cost_per_min": "$0.00 (Free Local)",
+    "wer": 100.0,
+    "cer": 84.23,
+    "urdu_pollution": true,
+    "proper_nouns_preserved": "0/5 (Corrupted into Urdu)",
+    "sample_output": "لوگ سوزتے ہیں سائید اگر یہاں انvest کر لیا ہوتا تو آجاپنا ٹیکٹر سکیور ہوتا ایک ایسا ہی پیٹر انvest ہم آپ پلے لیکر آئے ہیں دیلی نیسٹل ہائیوے پر ہمار پروجید ایونیویرسل سیٹی یہاں دی ا"
+  },
+  {
+    "model": "Groq Cloud whisper-large-v3",
+    "latency_sec": 2.6,
+    "cost_per_min": "$0.00018 / min (Generous Free Tier: 30 RPM)",
+    "wer": 13.57,
+    "cer": 6.25,
+    "urdu_pollution": false,
+    "proper_nouns_preserved": "6/6 (100% Intact)",
+    "sample_output": " लोग सोचते हैं शायद अगर यहां इन्वेस्ट कर लिया होता तो आज अपना future secure होता. ठीक ऐसा ही future invest हम आपके लिए लेकर आए हैं दिल्ली नेशनल हाइवे पर हमारा project universal cit"
+  },
+  {
+    "model": "Groq Cloud whisper-large-v3-turbo",
+    "latency_sec": 1.06,
+    "cost_per_min": "$0.00010 / min",
+    "wer": 78.57,
+    "cer": 58.95,
+    "urdu_pollution": false,
+    "proper_nouns_preserved": "5/6 (High)",
+    "sample_output": " People think that if you invest here, then your future will be secure. We have brought you to the Delhi National Highway, our project Universal City. If we talk about this townshi"
+  }
+]

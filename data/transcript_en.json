@@ -1,0 +1,528 @@
+[
+  {
+    "id": "seg_en_1",
+    "start": 0.0,
+    "end": 7.04,
+    "text": "If you are also from Pardar Nagar, Jagatpura, Sivudaspura, Patragar Koloni, Mansarore,",
+    "words": [
+      {
+        "id": "w_en_1_1",
+        "text": "If",
+        "start": 0.0,
+        "end": 0.2
+      },
+      {
+        "id": "w_en_1_2",
+        "text": "you",
+        "start": 0.2,
+        "end": 0.56
+      },
+      {
+        "id": "w_en_1_3",
+        "text": "are",
+        "start": 0.56,
+        "end": 0.74
+      },
+      {
+        "id": "w_en_1_4",
+        "text": "also",
+        "start": 0.74,
+        "end": 0.74
+      },
+      {
+        "id": "w_en_1_5",
+        "text": "from",
+        "start": 0.74,
+        "end": 1.02
+      },
+      {
+        "id": "w_en_1_6",
+        "text": "Pardar",
+        "start": 1.02,
+        "end": 2.94
+      },
+      {
+        "id": "w_en_1_7",
+        "text": "Nagar,",
+        "start": 2.94,
+        "end": 3.32
+      },
+      {
+        "id": "w_en_1_8",
+        "text": "Jagatpura,",
+        "start": 3.68,
+        "end": 4.18
+      },
+      {
+        "id": "w_en_1_9",
+        "text": "Sivudaspura,",
+        "start": 4.58,
+        "end": 5.18
+      },
+      {
+        "id": "w_en_1_10",
+        "text": "Patragar",
+        "start": 5.54,
+        "end": 5.94
+      },
+      {
+        "id": "w_en_1_11",
+        "text": "Koloni,",
+        "start": 5.94,
+        "end": 6.38
+      },
+      {
+        "id": "w_en_1_12",
+        "text": "Mansarore,",
+        "start": 6.5,
+        "end": 7.04
+      }
+    ]
+  },
+  {
+    "id": "seg_en_2",
+    "start": 8.12,
+    "end": 10.0,
+    "text": "then don't miss this opportunity.",
+    "words": [
+      {
+        "id": "w_en_2_1",
+        "text": "then",
+        "start": 8.12,
+        "end": 8.88
+      },
+      {
+        "id": "w_en_2_2",
+        "text": "don't",
+        "start": 8.88,
+        "end": 9.64
+      },
+      {
+        "id": "w_en_2_3",
+        "text": "miss",
+        "start": 9.64,
+        "end": 9.64
+      },
+      {
+        "id": "w_en_2_4",
+        "text": "this",
+        "start": 9.64,
+        "end": 9.78
+      },
+      {
+        "id": "w_en_2_5",
+        "text": "opportunity.",
+        "start": 9.78,
+        "end": 10.0
+      }
+    ]
+  },
+  {
+    "id": "seg_en_3",
+    "start": 16.16,
+    "end": 17.88,
+    "text": "Janakpuri is here for you.",
+    "words": [
+      {
+        "id": "w_en_3_1",
+        "text": "Janakpuri",
+        "start": 16.16,
+        "end": 16.92
+      },
+      {
+        "id": "w_en_3_2",
+        "text": "is",
+        "start": 16.92,
+        "end": 17.42
+      },
+      {
+        "id": "w_en_3_3",
+        "text": "here",
+        "start": 17.42,
+        "end": 17.42
+      },
+      {
+        "id": "w_en_3_4",
+        "text": "for",
+        "start": 17.42,
+        "end": 17.88
+      },
+      {
+        "id": "w_en_3_5",
+        "text": "you.",
+        "start": 17.88,
+        "end": 17.88
+      }
+    ]
+  },
+  {
+    "id": "seg_en_4",
+    "start": 18.44,
+    "end": 20.56,
+    "text": "On the 3rd and 4th highway, on the 2nd floor,",
+    "words": [
+      {
+        "id": "w_en_4_1",
+        "text": "On",
+        "start": 18.44,
+        "end": 18.58
+      },
+      {
+        "id": "w_en_4_2",
+        "text": "the",
+        "start": 18.58,
+        "end": 19.1
+      },
+      {
+        "id": "w_en_4_3",
+        "text": "3rd",
+        "start": 19.1,
+        "end": 19.3
+      },
+      {
+        "id": "w_en_4_4",
+        "text": "and",
+        "start": 19.3,
+        "end": 19.68
+      },
+      {
+        "id": "w_en_4_5",
+        "text": "4th",
+        "start": 19.68,
+        "end": 20.04
+      },
+      {
+        "id": "w_en_4_6",
+        "text": "highway,",
+        "start": 20.04,
+        "end": 20.08
+      },
+      {
+        "id": "w_en_4_7",
+        "text": "on",
+        "start": 20.22,
+        "end": 20.22
+      },
+      {
+        "id": "w_en_4_8",
+        "text": "the",
+        "start": 20.22,
+        "end": 20.22
+      },
+      {
+        "id": "w_en_4_9",
+        "text": "2nd",
+        "start": 20.22,
+        "end": 20.36
+      },
+      {
+        "id": "w_en_4_10",
+        "text": "floor,",
+        "start": 20.36,
+        "end": 20.56
+      }
+    ]
+  },
+  {
+    "id": "seg_en_5",
+    "start": 21.34,
+    "end": 25.06,
+    "text": "there is a project of 125 acres which is called Chakshu.",
+    "words": [
+      {
+        "id": "w_en_5_1",
+        "text": "there",
+        "start": 21.34,
+        "end": 21.34
+      },
+      {
+        "id": "w_en_5_2",
+        "text": "is",
+        "start": 21.34,
+        "end": 21.34
+      },
+      {
+        "id": "w_en_5_3",
+        "text": "a",
+        "start": 21.34,
+        "end": 21.42
+      },
+      {
+        "id": "w_en_5_4",
+        "text": "project",
+        "start": 21.42,
+        "end": 22.02
+      },
+      {
+        "id": "w_en_5_5",
+        "text": "of",
+        "start": 22.02,
+        "end": 22.02
+      },
+      {
+        "id": "w_en_5_6",
+        "text": "125",
+        "start": 22.02,
+        "end": 22.02
+      },
+      {
+        "id": "w_en_5_7",
+        "text": "acres",
+        "start": 22.02,
+        "end": 22.42
+      },
+      {
+        "id": "w_en_5_8",
+        "text": "which",
+        "start": 22.42,
+        "end": 23.5
+      },
+      {
+        "id": "w_en_5_9",
+        "text": "is",
+        "start": 23.5,
+        "end": 23.78
+      },
+      {
+        "id": "w_en_5_10",
+        "text": "called",
+        "start": 23.78,
+        "end": 24.16
+      },
+      {
+        "id": "w_en_5_11",
+        "text": "Chakshu.",
+        "start": 24.16,
+        "end": 25.06
+      }
+    ]
+  },
+  {
+    "id": "seg_en_6",
+    "start": 25.06,
+    "end": 29.36,
+    "text": "This project will be a part of the Chakshu Nagarpali.",
+    "words": [
+      {
+        "id": "w_en_6_1",
+        "text": "This",
+        "start": 25.06,
+        "end": 25.64
+      },
+      {
+        "id": "w_en_6_2",
+        "text": "project",
+        "start": 25.64,
+        "end": 25.96
+      },
+      {
+        "id": "w_en_6_3",
+        "text": "will",
+        "start": 25.96,
+        "end": 26.66
+      },
+      {
+        "id": "w_en_6_4",
+        "text": "be",
+        "start": 26.66,
+        "end": 26.66
+      },
+      {
+        "id": "w_en_6_5",
+        "text": "a",
+        "start": 26.66,
+        "end": 26.82
+      },
+      {
+        "id": "w_en_6_6",
+        "text": "part",
+        "start": 26.82,
+        "end": 26.88
+      },
+      {
+        "id": "w_en_6_7",
+        "text": "of",
+        "start": 26.88,
+        "end": 28.26
+      },
+      {
+        "id": "w_en_6_8",
+        "text": "the",
+        "start": 28.26,
+        "end": 28.26
+      },
+      {
+        "id": "w_en_6_9",
+        "text": "Chakshu",
+        "start": 28.26,
+        "end": 28.8
+      },
+      {
+        "id": "w_en_6_10",
+        "text": "Nagarpali.",
+        "start": 28.8,
+        "end": 29.36
+      }
+    ]
+  },
+  {
+    "id": "seg_en_7",
+    "start": 30.14,
+    "end": 34.56,
+    "text": "Today, everyone wants a small-invest big appreciation.",
+    "words": [
+      {
+        "id": "w_en_7_1",
+        "text": "Today,",
+        "start": 30.14,
+        "end": 30.78
+      },
+      {
+        "id": "w_en_7_2",
+        "text": "everyone",
+        "start": 31.06,
+        "end": 32.1
+      },
+      {
+        "id": "w_en_7_3",
+        "text": "wants",
+        "start": 32.1,
+        "end": 32.46
+      },
+      {
+        "id": "w_en_7_4",
+        "text": "a",
+        "start": 32.46,
+        "end": 33.0
+      },
+      {
+        "id": "w_en_7_5",
+        "text": "small",
+        "start": 33.0,
+        "end": 33.18
+      },
+      {
+        "id": "w_en_7_6",
+        "text": "-invest",
+        "start": 33.18,
+        "end": 33.56
+      },
+      {
+        "id": "w_en_7_7",
+        "text": "big",
+        "start": 33.56,
+        "end": 34.04
+      },
+      {
+        "id": "w_en_7_8",
+        "text": "appreciation.",
+        "start": 34.04,
+        "end": 34.56
+      }
+    ]
+  },
+  {
+    "id": "seg_en_8",
+    "start": 35.0,
+    "end": 40.96,
+    "text": "To give such a big appreciation, Janakpuri has brought 125 acres of Bhavya Township for you.",
+    "words": [
+      {
+        "id": "w_en_8_1",
+        "text": "To",
+        "start": 35.0,
+        "end": 35.12
+      },
+      {
+        "id": "w_en_8_2",
+        "text": "give",
+        "start": 35.12,
+        "end": 35.12
+      },
+      {
+        "id": "w_en_8_3",
+        "text": "such",
+        "start": 35.12,
+        "end": 35.32
+      },
+      {
+        "id": "w_en_8_4",
+        "text": "a",
+        "start": 35.32,
+        "end": 35.5
+      },
+      {
+        "id": "w_en_8_5",
+        "text": "big",
+        "start": 35.5,
+        "end": 35.58
+      },
+      {
+        "id": "w_en_8_6",
+        "text": "appreciation,",
+        "start": 35.58,
+        "end": 36.24
+      },
+      {
+        "id": "w_en_8_7",
+        "text": "Janakpuri",
+        "start": 36.8,
+        "end": 37.68
+      },
+      {
+        "id": "w_en_8_8",
+        "text": "has",
+        "start": 37.68,
+        "end": 38.02
+      },
+      {
+        "id": "w_en_8_9",
+        "text": "brought",
+        "start": 38.02,
+        "end": 38.22
+      },
+      {
+        "id": "w_en_8_10",
+        "text": "125",
+        "start": 38.22,
+        "end": 39.44
+      },
+      {
+        "id": "w_en_8_11",
+        "text": "acres",
+        "start": 39.44,
+        "end": 40.0
+      },
+      {
+        "id": "w_en_8_12",
+        "text": "of",
+        "start": 40.0,
+        "end": 40.18
+      },
+      {
+        "id": "w_en_8_13",
+        "text": "Bhavya",
+        "start": 40.18,
+        "end": 40.56
+      },
+      {
+        "id": "w_en_8_14",
+        "text": "Township",
+        "start": 40.56,
+        "end": 40.9
+      },
+      {
+        "id": "w_en_8_15",
+        "text": "for",
+        "start": 40.9,
+        "end": 40.96
+      },
+      {
+        "id": "w_en_8_16",
+        "text": "you.",
+        "start": 40.96,
+        "end": 40.96
+      }
+    ]
+  }
+]

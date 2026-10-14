@@ -1,0 +1,692 @@
+{
+  "task": "transcribe",
+  "language": "Hindi",
+  "duration": 48.87793664,
+  "text": " लोग सोचते हैं शायद अगर यहाँ invest कर लिया होता तो आज अपना future secure होता. ठीक ऐसा ही future invest हम आपके लिए लेकर आए हैं दिल्ली नेशनल हाइवे पर हमारा project universal city. यदि इस township की connectivity की बात करें तो यहाँ से 200-300 में दाएरे में NIMS Hospital, NIMS University, प्लस Aamity University है. और साथ ही साथ इस Township में रहने वाली है 50 plus amenities जैसे कि मैं बात करूँ, swimming pool, banquet hall, outdoor gym, indoor gym, kids play area, temple, meeting hall. यदि बात करें यहाँ पर plots की तो यहाँ पर रहने वाले हैं commercial plus residential plot जिसकी starting 111 वर्गर्ज से लेकर दाहे जार वर्गर्ज तक है तो देर किस वागती नीचे दिये के नमबरों पर क्लिक करें और आज ही अपना plot book करें",
+  "words": [
+    {
+      "word": "लोग",
+      "start": 0,
+      "end": 0.28
+    },
+    {
+      "word": "सोचते",
+      "start": 0.28,
+      "end": 0.72
+    },
+    {
+      "word": "हैं",
+      "start": 0.72,
+      "end": 0.92
+    },
+    {
+      "word": "शायद",
+      "start": 0.92,
+      "end": 1.46
+    },
+    {
+      "word": "अगर",
+      "start": 1.46,
+      "end": 2.06
+    },
+    {
+      "word": "यहाँ",
+      "start": 2.06,
+      "end": 2.36
+    },
+    {
+      "word": "invest",
+      "start": 2.36,
+      "end": 2.66
+    },
+    {
+      "word": "कर",
+      "start": 2.66,
+      "end": 2.86
+    },
+    {
+      "word": "लिया",
+      "start": 2.86,
+      "end": 3.04
+    },
+    {
+      "word": "होता",
+      "start": 3.04,
+      "end": 3.26
+    },
+    {
+      "word": "तो",
+      "start": 3.26,
+      "end": 3.6
+    },
+    {
+      "word": "आज",
+      "start": 3.6,
+      "end": 3.76
+    },
+    {
+      "word": "अपना",
+      "start": 3.76,
+      "end": 3.94
+    },
+    {
+      "word": "future",
+      "start": 3.94,
+      "end": 4.2
+    },
+    {
+      "word": "secure",
+      "start": 4.2,
+      "end": 4.62
+    },
+    {
+      "word": "होता.",
+      "start": 4.62,
+      "end": 4.92
+    },
+    {
+      "word": "ठीक",
+      "start": 10.52,
+      "end": 10.8
+    },
+    {
+      "word": "ऐसा",
+      "start": 10.8,
+      "end": 11.16
+    },
+    {
+      "word": "ही",
+      "start": 11.16,
+      "end": 11.26
+    },
+    {
+      "word": "future",
+      "start": 11.26,
+      "end": 11.56
+    },
+    {
+      "word": "invest",
+      "start": 11.56,
+      "end": 11.98
+    },
+    {
+      "word": "हम",
+      "start": 11.98,
+      "end": 12.22
+    },
+    {
+      "word": "आपके",
+      "start": 12.22,
+      "end": 12.5
+    },
+    {
+      "word": "लिए",
+      "start": 12.5,
+      "end": 12.6
+    },
+    {
+      "word": "लेकर",
+      "start": 12.6,
+      "end": 12.88
+    },
+    {
+      "word": "आए",
+      "start": 12.88,
+      "end": 13.04
+    },
+    {
+      "word": "हैं",
+      "start": 13.04,
+      "end": 13.16
+    },
+    {
+      "word": "दिल्ली",
+      "start": 13.16,
+      "end": 13.48
+    },
+    {
+      "word": "नेशनल",
+      "start": 13.48,
+      "end": 13.84
+    },
+    {
+      "word": "हाइवे",
+      "start": 13.84,
+      "end": 14.12
+    },
+    {
+      "word": "पर",
+      "start": 14.12,
+      "end": 14.32
+    },
+    {
+      "word": "हमारा",
+      "start": 14.32,
+      "end": 14.98
+    },
+    {
+      "word": "project",
+      "start": 14.98,
+      "end": 15.36
+    },
+    {
+      "word": "universal",
+      "start": 15.36,
+      "end": 16.04
+    },
+    {
+      "word": "city.",
+      "start": 16.04,
+      "end": 16.7
+    },
+    {
+      "word": "यदि",
+      "start": 16.7,
+      "end": 16.98
+    },
+    {
+      "word": "इस",
+      "start": 16.98,
+      "end": 17.26
+    },
+    {
+      "word": "township",
+      "start": 17.26,
+      "end": 17.64
+    },
+    {
+      "word": "की",
+      "start": 17.64,
+      "end": 17.78
+    },
+    {
+      "word": "connectivity",
+      "start": 17.78,
+      "end": 18.24
+    },
+    {
+      "word": "की",
+      "start": 18.24,
+      "end": 18.44
+    },
+    {
+      "word": "बात",
+      "start": 18.44,
+      "end": 18.62
+    },
+    {
+      "word": "करें",
+      "start": 18.62,
+      "end": 18.88
+    },
+    {
+      "word": "तो",
+      "start": 18.88,
+      "end": 19.18
+    },
+    {
+      "word": "यहाँ",
+      "start": 19.18,
+      "end": 19.46
+    },
+    {
+      "word": "से",
+      "start": 19.46,
+      "end": 19.56
+    },
+    {
+      "word": "200-300",
+      "start": 19.56,
+      "end": 20.26
+    },
+    {
+      "word": "में",
+      "start": 20.26,
+      "end": 20.46
+    },
+    {
+      "word": "दाएरे",
+      "start": 20.46,
+      "end": 20.98
+    },
+    {
+      "word": "में",
+      "start": 20.98,
+      "end": 21.08
+    },
+    {
+      "word": "NIMS",
+      "start": 21.08,
+      "end": 21.78
+    },
+    {
+      "word": "Hospital,",
+      "start": 21.78,
+      "end": 22.66
+    },
+    {
+      "word": "NIMS",
+      "start": 22.66,
+      "end": 22.96
+    },
+    {
+      "word": "University,",
+      "start": 22.96,
+      "end": 23.92
+    },
+    {
+      "word": "प्लस",
+      "start": 23.92,
+      "end": 24.18
+    },
+    {
+      "word": "Aamity",
+      "start": 24.18,
+      "end": 24.82
+    },
+    {
+      "word": "University",
+      "start": 24.82,
+      "end": 25.3
+    },
+    {
+      "word": "है.",
+      "start": 25.3,
+      "end": 25.78
+    },
+    {
+      "word": "और",
+      "start": 25.54,
+      "end": 25.84
+    },
+    {
+      "word": "साथ",
+      "start": 25.84,
+      "end": 26.08
+    },
+    {
+      "word": "ही",
+      "start": 26.08,
+      "end": 26.22
+    },
+    {
+      "word": "साथ",
+      "start": 26.22,
+      "end": 26.44
+    },
+    {
+      "word": "इस",
+      "start": 26.44,
+      "end": 26.7
+    },
+    {
+      "word": "Township",
+      "start": 26.7,
+      "end": 27.08
+    },
+    {
+      "word": "में",
+      "start": 27.08,
+      "end": 27.18
+    },
+    {
+      "word": "रहने",
+      "start": 27.18,
+      "end": 27.46
+    },
+    {
+      "word": "वाली",
+      "start": 27.46,
+      "end": 27.62
+    },
+    {
+      "word": "है",
+      "start": 27.62,
+      "end": 27.7
+    },
+    {
+      "word": "50",
+      "start": 27.7,
+      "end": 27.94
+    },
+    {
+      "word": "plus",
+      "start": 27.94,
+      "end": 28.22
+    },
+    {
+      "word": "amenities",
+      "start": 28.22,
+      "end": 28.62
+    },
+    {
+      "word": "जैसे",
+      "start": 28.62,
+      "end": 28.96
+    },
+    {
+      "word": "कि",
+      "start": 28.96,
+      "end": 29.08
+    },
+    {
+      "word": "मैं",
+      "start": 29.08,
+      "end": 29.2
+    },
+    {
+      "word": "बात",
+      "start": 29.2,
+      "end": 29.36
+    },
+    {
+      "word": "करूँ,",
+      "start": 29.36,
+      "end": 29.74
+    },
+    {
+      "word": "swimming",
+      "start": 29.74,
+      "end": 30
+    },
+    {
+      "word": "pool,",
+      "start": 30,
+      "end": 30.44
+    },
+    {
+      "word": "banquet",
+      "start": 30.44,
+      "end": 30.74
+    },
+    {
+      "word": "hall,",
+      "start": 30.74,
+      "end": 31.4
+    },
+    {
+      "word": "outdoor",
+      "start": 31.4,
+      "end": 31.7
+    },
+    {
+      "word": "gym,",
+      "start": 31.7,
+      "end": 32.14
+    },
+    {
+      "word": "indoor",
+      "start": 32.14,
+      "end": 32.44
+    },
+    {
+      "word": "gym,",
+      "start": 32.44,
+      "end": 33.22
+    },
+    {
+      "word": "kids",
+      "start": 33.22,
+      "end": 33.5
+    },
+    {
+      "word": "play",
+      "start": 33.5,
+      "end": 33.7
+    },
+    {
+      "word": "area,",
+      "start": 33.7,
+      "end": 34.32
+    },
+    {
+      "word": "temple,",
+      "start": 34.32,
+      "end": 35.26
+    },
+    {
+      "word": "meeting",
+      "start": 35.26,
+      "end": 35.52
+    },
+    {
+      "word": "hall.",
+      "start": 35.52,
+      "end": 35.88
+    },
+    {
+      "word": "यदि",
+      "start": 35.8,
+      "end": 36.1
+    },
+    {
+      "word": "बात",
+      "start": 36.1,
+      "end": 36.34
+    },
+    {
+      "word": "करें",
+      "start": 36.34,
+      "end": 36.54
+    },
+    {
+      "word": "यहाँ",
+      "start": 36.54,
+      "end": 36.74
+    },
+    {
+      "word": "पर",
+      "start": 36.74,
+      "end": 36.86
+    },
+    {
+      "word": "plots",
+      "start": 36.86,
+      "end": 37.18
+    },
+    {
+      "word": "की",
+      "start": 37.18,
+      "end": 37.4
+    },
+    {
+      "word": "तो",
+      "start": 37.4,
+      "end": 37.52
+    },
+    {
+      "word": "यहाँ",
+      "start": 37.52,
+      "end": 37.8
+    },
+    {
+      "word": "पर",
+      "start": 37.8,
+      "end": 37.92
+    },
+    {
+      "word": "रहने",
+      "start": 37.92,
+      "end": 38.16
+    },
+    {
+      "word": "वाले",
+      "start": 38.16,
+      "end": 38.32
+    },
+    {
+      "word": "हैं",
+      "start": 38.32,
+      "end": 38.4
+    },
+    {
+      "word": "commercial",
+      "start": 38.4,
+      "end": 38.82
+    },
+    {
+      "word": "plus",
+      "start": 38.82,
+      "end": 39.1
+    },
+    {
+      "word": "residential",
+      "start": 39.1,
+      "end": 39.7
+    },
+    {
+      "word": "plot",
+      "start": 39.7,
+      "end": 40.02
+    },
+    {
+      "word": "जिसकी",
+      "start": 40.02,
+      "end": 40.62
+    },
+    {
+      "word": "starting",
+      "start": 40.62,
+      "end": 41.08
+    },
+    {
+      "word": "111",
+      "start": 41.08,
+      "end": 41.92
+    },
+    {
+      "word": "वर्गर्ज",
+      "start": 41.92,
+      "end": 42.28
+    },
+    {
+      "word": "से",
+      "start": 42.28,
+      "end": 42.48
+    },
+    {
+      "word": "लेकर",
+      "start": 42.48,
+      "end": 42.74
+    },
+    {
+      "word": "दाहे",
+      "start": 42.74,
+      "end": 43.62
+    },
+    {
+      "word": "जार",
+      "start": 43.62,
+      "end": 43.72
+    },
+    {
+      "word": "वर्गर्ज",
+      "start": 43.72,
+      "end": 44.08
+    },
+    {
+      "word": "तक",
+      "start": 44.08,
+      "end": 44.32
+    },
+    {
+      "word": "है",
+      "start": 44.32,
+      "end": 44.44
+    },
+    {
+      "word": "तो",
+      "start": 44.44,
+      "end": 44.72
+    },
+    {
+      "word": "देर",
+      "start": 44.72,
+      "end": 44.96
+    },
+    {
+      "word": "किस",
+      "start": 44.96,
+      "end": 45.18
+    },
+    {
+      "word": "वागती",
+      "start": 45.18,
+      "end": 45.56
+    },
+    {
+      "word": "नीचे",
+      "start": 45.56,
+      "end": 46.04
+    },
+    {
+      "word": "दिये",
+      "start": 46.04,
+      "end": 46.26
+    },
+    {
+      "word": "के",
+      "start": 46.26,
+      "end": 46.32
+    },
+    {
+      "word": "नमबरों",
+      "start": 46.32,
+      "end": 46.66
+    },
+    {
+      "word": "पर",
+      "start": 46.66,
+      "end": 46.72
+    },
+    {
+      "word": "क्लिक",
+      "start": 46.72,
+      "end": 46.96
+    },
+    {
+      "word": "करें",
+      "start": 46.96,
+      "end": 47.28
+    },
+    {
+      "word": "और",
+      "start": 47.28,
+      "end": 47.54
+    },
+    {
+      "word": "आज",
+      "start": 47.54,
+      "end": 47.78
+    },
+    {
+      "word": "ही",
+      "start": 47.78,
+      "end": 47.82
+    },
+    {
+      "word": "अपना",
+      "start": 47.82,
+      "end": 48
+    },
+    {
+      "word": "plot",
+      "start": 48,
+      "end": 48.24
+    },
+    {
+      "word": "book",
+      "start": 48.24,
+      "end": 48.46
+    },
+    {
+      "word": "करें",
+      "start": 48.46,
+      "end": 48.7
+    }
+  ],
+  "segments": null,
+  "x_groq": {
+    "id": "req_01m4vd0cqte8qt1jg7ja3kjrkf"
+  }
+}

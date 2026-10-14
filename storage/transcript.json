@@ -1,0 +1,39 @@
+{
+  "engine": "groq_whisper_large_v3",
+  "language": "English",
+  "duration": 5,
+  "transcript": [
+    {
+      "id": "c_1",
+      "start": 0.0,
+      "end": 0.52,
+      "text": "Thank you.",
+      "textLatn": "Thank you.",
+      "words": [
+        {
+          "id": "w_1_1",
+          "text": "Thank",
+          "textLatn": "Thank",
+          "start": 0.0,
+          "end": 0.5,
+          "confidence": 0.95,
+          "highlight": false,
+          "emphasisTier": 0,
+          "style": null
+        },
+        {
+          "id": "w_1_2",
+          "text": "you.",
+          "textLatn": "you.",
+          "start": 0.5,
+          "end": 0.52,
+          "confidence": 0.95,
+          "highlight": false,
+          "emphasisTier": 0,
+          "style": null
+        }
+      ]
+    }
+  ],
+  "wordCount": 2
+}
