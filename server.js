@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const vp = require('./video_processor');
+const gdrive = require('./google_drive_service');
 
 const PORT = process.env.PORT || 3000;
 
@@ -1285,6 +1286,147 @@ const server = http.createServer(async (req, res) => {
     });
     res.end(studioHtml);
     return;
+  }
+
+  // API: Google OAuth Login for Google Drive Sync
+  if (pathname === '/api/auth/google/login') {
+    const authUrl = gdrive.getAuthUrl();
+    res.writeHead(302, { Location: authUrl });
+    return res.end();
+  }
+
+  // API: Google OAuth Callback & Automated Moonshot Folder Upload
+  if (pathname === '/api/auth/google/callback') {
+    const code = parsedUrl.searchParams.get('code');
+    const error = parsedUrl.searchParams.get('error');
+
+    if (error) {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      return res.end(`
+        <div style="font-family:sans-serif;max-width:600px;margin:50px auto;padding:30px;border-radius:12px;background:#18181b;color:#f4f4f5;text-align:center;">
+          <h2 style="color:#ef4444;">Google Authorization Cancelled</h2>
+          <p>${error}</p>
+          <a href="/api/auth/google/login" style="display:inline-block;padding:12px 24px;border-radius:8px;background:#4f46e5;color:#fff;text-decoration:none;margin-top:20px;font-weight:700;">Retry Authorization</a>
+        </div>
+      `);
+    }
+
+    if (!code) {
+      res.writeHead(400, { 'Content-Type': 'text/plain' });
+      return res.end('Missing code in callback');
+    }
+
+    try {
+      await gdrive.handleCallback(code);
+      const folder = await gdrive.getOrCreateFolder('Moonshot');
+
+      const linksContent = `=====================================================
+MOONSHOT REPLICA - CLOUD DEPLOYMENT & PORTAL LINKS
+=====================================================
+
+1. GITHUB REPOSITORY:
+   https://github.com/akashkumart2x-tech/moonshot-clone
+
+2. 1-CLICK RENDER CLOUD DEPLOY (DOCKER WEB SERVICE):
+   https://render.com/deploy?repo=https://github.com/akashkumart2x-tech/moonshot-clone
+
+3. 1-CLICK RAILWAY CLOUD DEPLOY:
+   https://railway.app/new/template?template=https://github.com/akashkumart2x-tech/moonshot-clone
+
+4. CLOUD DATABASE (NEON POSTGRESQL):
+   Database: moonshot_db
+   Host: ep-icy-surf-b3wm90n1-pooler.c-4.ap-southeast-1.aws.neon.tech
+   Region: AWS AP-Southeast-1 (Singapore)
+   Connection URI: postgresql://neondb_owner:***@ep-icy-surf-b3wm90n1-pooler.c-4.ap-southeast-1.aws.neon.tech/moonshot_db?sslmode=require
+
+5. ENVIRONMENT VARIABLES FOR CLOUD HOST:
+   PORT=3000
+   NODE_ENV=production
+   GROQ_API_KEY=[Configured in Render / Railway Environment]
+   DATABASE_URL=[Configured in Render / Railway Environment]
+
+6. LOCAL STUDIO PREVIEW & EDITING (WHEN RUNNING LOCALLY):
+   http://localhost:3000/studio/proj_demo_1
+   http://localhost:3000/studio/proj_mv7gvbgy_uq72r (Video 1: 3D Hero Dimension Story)
+   http://localhost:3000/studio/proj_mv7057hy_bzg0b (Video 2: Social Word Pink Karaoke)
+
+=====================================================
+Generated automatically on 2026-10-14
+`;
+
+      await gdrive.uploadTextFile(folder.id, 'Moonshot_App_Links.txt', linksContent, 'text/plain');
+
+      const htmlPortal = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Moonshot AI Video Editor - Cloud Portal</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #09090b; color: #f4f4f5; margin: 0; padding: 40px 20px; }
+    .card { max-width: 680px; margin: 0 auto; background: #18181b; border: 1px solid #27272a; border-radius: 16px; padding: 36px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    h1 { margin-top: 0; font-size: 26px; background: linear-gradient(135deg, #a855f7, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .btn { display: inline-block; padding: 12px 24px; border-radius: 9999px; background: linear-gradient(135deg, #4f46e5, #7c3aed); color: #fff; text-decoration: none; font-weight: 700; margin: 8px 6px 8px 0; }
+    .btn-secondary { background: #27272a; color: #e4e4e7; border: 1px solid #3f3f46; }
+    .section { margin: 24px 0; padding: 16px; background: #09090b; border-radius: 10px; border: 1px solid #27272a; font-size: 14px; line-height: 1.6; }
+    code { background: #27272a; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 13px; color: #a5b4fc; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🚀 Moonshot AI Video Editor</h1>
+    <p>Permanent cloud deployment portal, repository, and infrastructure links.</p>
+    <div style="margin: 20px 0;">
+      <a class="btn" href="https://render.com/deploy?repo=https://github.com/akashkumart2x-tech/moonshot-clone" target="_blank">Deploy to Render (1-Click)</a>
+      <a class="btn btn-secondary" href="https://github.com/akashkumart2x-tech/moonshot-clone" target="_blank">View GitHub Repo</a>
+    </div>
+    <div class="section">
+      <strong>Cloud PostgreSQL Database:</strong><br/>
+      Cluster: <code>muddy-butterfly-77662263</code> (Neon AWS AP-Southeast-1)<br/>
+      Database: <code>moonshot_db</code> (Pre-seeded with 54 projects & renders)
+    </div>
+  </div>
+</body>
+</html>`;
+      await gdrive.uploadTextFile(folder.id, 'Moonshot_Portal.html', htmlPortal, 'text/html');
+
+      const folderLink = folder.webViewLink || `https://drive.google.com/drive/folders/${folder.id}`;
+
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      return res.end(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <title>Google Drive Upload Complete</title>
+          <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #09090b; color: #f4f4f5; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+            .box { max-width: 580px; background: #18181b; border: 1px solid #27272a; border-radius: 16px; padding: 36px; text-align: center; box-shadow: 0 24px 48px rgba(0,0,0,0.6); }
+            h2 { color: #22c55e; margin-top: 0; font-size: 24px; }
+            p { color: #d4d4d8; font-size: 15px; line-height: 1.6; }
+            .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 9999px; background: linear-gradient(135deg, #10b981, #059669); color: #fff; font-size: 16px; font-weight: 700; text-decoration: none; margin-top: 24px; box-shadow: 0 8px 24px rgba(16,185,129,0.4); }
+          </style>
+        </head>
+        <body>
+          <div class="box">
+            <h2>✅ Moonshot Folder Created on Google Drive!</h2>
+            <p>The <strong>Moonshot</strong> folder was successfully created in your Google Drive and the cloud deployment links have been uploaded.</p>
+            <p style="color:#a1a1aa;font-size:14px;">Uploaded files: <code>Moonshot_App_Links.txt</code> and <code>Moonshot_Portal.html</code></p>
+            <a class="btn" href="${folderLink}" target="_blank">Open Moonshot Folder in Google Drive ➔</a>
+          </div>
+        </body>
+        </html>
+      `);
+    } catch (e) {
+      console.error('[Google Drive Error]', e);
+      res.writeHead(500, { 'Content-Type': 'text/html; charset=utf-8' });
+      return res.end(`
+        <div style="font-family:sans-serif;max-width:600px;margin:50px auto;padding:30px;border-radius:12px;background:#18181b;color:#f4f4f5;text-align:center;">
+          <h2 style="color:#ef4444;">Google Drive Upload Failed</h2>
+          <p>${e.message}</p>
+          <a href="/api/auth/google/login" style="display:inline-block;padding:12px 24px;border-radius:8px;background:#4f46e5;color:#fff;text-decoration:none;margin-top:20px;font-weight:700;">Retry Authorization</a>
+        </div>
+      `);
+    }
   }
 
   // Root Homepage
