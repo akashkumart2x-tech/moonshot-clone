@@ -60893,6 +60893,921 @@
       "aspectRatio": "9:16",
       "audioTracks": [],
       "brollSceneCuts": []
+    },
+    "proj_mv9qx99o_j6dtc": {
+      "id": "proj_mv9qx99o_j6dtc",
+      "title": "1",
+      "presetId": "dimension-story",
+      "outputMode": "video",
+      "userId": "usr_moonshot_creator",
+      "createdAt": "2026-10-15T16:21:19.790Z",
+      "updatedAt": "2026-10-15T16:21:20.282Z",
+      "aspectRatio": "9:16",
+      "source": {
+        "id": "src_proj_mv9qx99o_j6dtc",
+        "kind": "video",
+        "filePath": "D:\\AAKASH\\motion graphics\\moonshot-clone\\uploads\\session_mv9qwwkd_ue0eq\\source.mp4",
+        "previewFilePath": "D:\\AAKASH\\motion graphics\\moonshot-clone\\uploads\\session_mv9qwwkd_ue0eq\\source.preview-1080x1920-v7.mp4",
+        "previewUrl": "/uploads/session_mv9qwwkd_ue0eq/source.preview-1080x1920-v7.mp4",
+        "downloadUrl": "/uploads/session_mv9qwwkd_ue0eq/source.preview-1080x1920-v7.mp4",
+        "originalDuration": 22.27,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "matte": {
+          "status": "ready",
+          "progress": 1
+        }
+      },
+      "pipeline": {
+        "transcribe": {
+          "status": "done",
+          "progress": 1
+        },
+        "hook": {
+          "status": "done",
+          "progress": 1
+        },
+        "caption": {
+          "status": "done",
+          "progress": 1
+        },
+        "broll": {
+          "status": "done",
+          "progress": 1
+        },
+        "music": {
+          "status": "done",
+          "progress": 1
+        },
+        "sfx": {
+          "status": "done",
+          "progress": 1
+        },
+        "color": {
+          "status": "done",
+          "progress": 1
+        },
+        "dynamicfx": {
+          "status": "skipped"
+        },
+        "background": {
+          "status": "skipped"
+        },
+        "elements": {
+          "status": "skipped"
+        }
+      },
+      "transcript": [
+        {
+          "id": "c_1",
+          "start": 0,
+          "end": 1.48,
+          "text": "दिग्गी रोड, दिग्गी रोड,",
+          "textLatn": "Diggee Road Diggee Road",
+          "words": [
+            {
+              "id": "w_1_1",
+              "text": "दिग्गी",
+              "textLatn": "Diggee",
+              "start": 0,
+              "end": 0.26,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_1_2",
+              "text": "रोड,",
+              "textLatn": "Road",
+              "start": 0.26,
+              "end": 0.62,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_1_3",
+              "text": "दिग्गी",
+              "textLatn": "Diggee",
+              "start": 0.62,
+              "end": 1.1,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_1_4",
+              "text": "रोड,",
+              "textLatn": "Road",
+              "start": 1.1,
+              "end": 1.48,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_2",
+          "start": 1.48,
+          "end": 3,
+          "text": "दिग्गी रोड, हम लोग,",
+          "textLatn": "Diggee Road hum Log",
+          "words": [
+            {
+              "id": "w_2_1",
+              "text": "दिग्गी",
+              "textLatn": "Diggee",
+              "start": 1.48,
+              "end": 1.8,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_2_2",
+              "text": "रोड,",
+              "textLatn": "Road",
+              "start": 1.8,
+              "end": 2.18,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_2_3",
+              "text": "हम",
+              "textLatn": "hum",
+              "start": 2.18,
+              "end": 2.48,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_2_4",
+              "text": "लोग,",
+              "textLatn": "Log",
+              "start": 2.48,
+              "end": 3,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_3",
+          "start": 3,
+          "end": 3.74,
+          "text": "आप लोगों की demand",
+          "textLatn": "Aapa Logon ki demand",
+          "words": [
+            {
+              "id": "w_3_1",
+              "text": "आप",
+              "textLatn": "Aapa",
+              "start": 3,
+              "end": 3.16,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_3_2",
+              "text": "लोगों",
+              "textLatn": "Logon",
+              "start": 3.16,
+              "end": 3.4,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_3_3",
+              "text": "की",
+              "textLatn": "ki",
+              "start": 3.4,
+              "end": 3.44,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_3_4",
+              "text": "demand",
+              "textLatn": "demand",
+              "start": 3.44,
+              "end": 3.74,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_4",
+          "start": 3.74,
+          "end": 5.16,
+          "text": "के उनसार, हमारा project",
+          "textLatn": "ke Unasaara hamara project",
+          "words": [
+            {
+              "id": "w_4_1",
+              "text": "के",
+              "textLatn": "ke",
+              "start": 3.74,
+              "end": 3.84,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_4_2",
+              "text": "उनसार,",
+              "textLatn": "Unasaara",
+              "start": 3.84,
+              "end": 4.64,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_4_3",
+              "text": "हमारा",
+              "textLatn": "hamara",
+              "start": 4.64,
+              "end": 4.84,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_4_4",
+              "text": "project",
+              "textLatn": "project",
+              "start": 4.84,
+              "end": 5.16,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_5",
+          "start": 5.16,
+          "end": 6.14,
+          "text": "ले आचुके हैं, जो",
+          "textLatn": "le Aachuke hain jo",
+          "words": [
+            {
+              "id": "w_5_1",
+              "text": "ले",
+              "textLatn": "le",
+              "start": 5.16,
+              "end": 5.56,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_5_2",
+              "text": "आचुके",
+              "textLatn": "Aachuke",
+              "start": 5.56,
+              "end": 5.9,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_5_3",
+              "text": "हैं,",
+              "textLatn": "hain",
+              "start": 5.9,
+              "end": 6.06,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_5_4",
+              "text": "जो",
+              "textLatn": "jo",
+              "start": 6.06,
+              "end": 6.14,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_6",
+          "start": 6.14,
+          "end": 7.66,
+          "text": "मात्र दिग्गी रोड से",
+          "textLatn": "Maatra Diggee Road se",
+          "words": [
+            {
+              "id": "w_6_1",
+              "text": "मात्र",
+              "textLatn": "Maatra",
+              "start": 6.14,
+              "end": 6.66,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_6_2",
+              "text": "दिग्गी",
+              "textLatn": "Diggee",
+              "start": 6.66,
+              "end": 7.34,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_6_3",
+              "text": "रोड",
+              "textLatn": "Road",
+              "start": 7.34,
+              "end": 7.52,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_6_4",
+              "text": "से",
+              "textLatn": "se",
+              "start": 7.52,
+              "end": 7.66,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_7",
+          "start": 7.66,
+          "end": 8.88,
+          "text": "3 किलोमेटर अंदर है,",
+          "textLatn": "3 Kilometara andar hai",
+          "words": [
+            {
+              "id": "w_7_1",
+              "text": "3",
+              "textLatn": "3",
+              "start": 7.66,
+              "end": 7.9,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_7_2",
+              "text": "किलोमेटर",
+              "textLatn": "Kilometara",
+              "start": 7.9,
+              "end": 8.3,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_7_3",
+              "text": "अंदर",
+              "textLatn": "andar",
+              "start": 8.3,
+              "end": 8.64,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_7_4",
+              "text": "है,",
+              "textLatn": "hai",
+              "start": 8.64,
+              "end": 8.88,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_8",
+          "start": 8.88,
+          "end": 10,
+          "text": "और नोले सिटी के",
+          "textLatn": "aur Nole Sitee ke",
+          "words": [
+            {
+              "id": "w_8_1",
+              "text": "और",
+              "textLatn": "aur",
+              "start": 8.88,
+              "end": 9.24,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_8_2",
+              "text": "नोले",
+              "textLatn": "Nole",
+              "start": 9.24,
+              "end": 9.64,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_8_3",
+              "text": "सिटी",
+              "textLatn": "Sitee",
+              "start": 9.64,
+              "end": 9.86,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_8_4",
+              "text": "के",
+              "textLatn": "ke",
+              "start": 9.86,
+              "end": 10,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_9",
+          "start": 10,
+          "end": 10.86,
+          "text": "पास रहने वाला है,",
+          "textLatn": "Paasa rehne Vaalaa hai",
+          "words": [
+            {
+              "id": "w_9_1",
+              "text": "पास",
+              "textLatn": "Paasa",
+              "start": 10,
+              "end": 10.12,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_9_2",
+              "text": "रहने",
+              "textLatn": "rehne",
+              "start": 10.12,
+              "end": 10.46,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_9_3",
+              "text": "वाला",
+              "textLatn": "Vaalaa",
+              "start": 10.46,
+              "end": 10.66,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_9_4",
+              "text": "है,",
+              "textLatn": "hai",
+              "start": 10.66,
+              "end": 10.86,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_10",
+          "start": 10.86,
+          "end": 11.66,
+          "text": "इस project की बात",
+          "textLatn": "is project ki baat",
+          "words": [
+            {
+              "id": "w_10_1",
+              "text": "इस",
+              "textLatn": "is",
+              "start": 10.86,
+              "end": 11.08,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_10_2",
+              "text": "project",
+              "textLatn": "project",
+              "start": 11.08,
+              "end": 11.4,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_10_3",
+              "text": "की",
+              "textLatn": "ki",
+              "start": 11.4,
+              "end": 11.52,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_10_4",
+              "text": "बात",
+              "textLatn": "baat",
+              "start": 11.52,
+              "end": 11.66,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_11",
+          "start": 11.66,
+          "end": 12.64,
+          "text": "करो, यह 30 बीगा",
+          "textLatn": "karo Yaha 30 Beegaa",
+          "words": [
+            {
+              "id": "w_11_1",
+              "text": "करो,",
+              "textLatn": "karo",
+              "start": 11.66,
+              "end": 11.9,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_11_2",
+              "text": "यह",
+              "textLatn": "Yaha",
+              "start": 11.9,
+              "end": 12,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_11_3",
+              "text": "30",
+              "textLatn": "30",
+              "start": 12,
+              "end": 12.36,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_11_4",
+              "text": "बीगा",
+              "textLatn": "Beegaa",
+              "start": 12.36,
+              "end": 12.64,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_12",
+          "start": 12.64,
+          "end": 13.5,
+          "text": "का JDA प्रत रेर",
+          "textLatn": "ka JDA Prata Rera",
+          "words": [
+            {
+              "id": "w_12_1",
+              "text": "का",
+              "textLatn": "ka",
+              "start": 12.64,
+              "end": 12.78,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_12_2",
+              "text": "JDA",
+              "textLatn": "JDA",
+              "start": 12.78,
+              "end": 13.1,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_12_3",
+              "text": "प्रत",
+              "textLatn": "Prata",
+              "start": 13.1,
+              "end": 13.3,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_12_4",
+              "text": "रेर",
+              "textLatn": "Rera",
+              "start": 13.3,
+              "end": 13.5,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_13",
+          "start": 13.5,
+          "end": 30,
+          "text": "अप्रूब रहन",
+          "textLatn": "Aprooba Rahana",
+          "words": [
+            {
+              "id": "w_13_1",
+              "text": "अप्रूब",
+              "textLatn": "Aprooba",
+              "start": 13.5,
+              "end": 29.98,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_13_2",
+              "text": "रहन",
+              "textLatn": "Rahana",
+              "start": 29.98,
+              "end": 30,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        }
+      ],
+      "clips": [
+        {
+          "id": "clip_video_proj_mv9qx99o_j6dtc",
+          "kind": "video",
+          "start": 0,
+          "duration": 22.27,
+          "sourceStart": 0,
+          "sourceDuration": 22.27,
+          "volume": 1
+        },
+        {
+          "id": "clip_c_1",
+          "kind": "caption",
+          "start": 0,
+          "duration": 1.48,
+          "wordIds": [
+            "w_1_1",
+            "w_1_2",
+            "w_1_3",
+            "w_1_4"
+          ],
+          "styleOverride": null
+        },
+        {
+          "id": "clip_c_2",
+          "kind": "caption",
+          "start": 1.48,
+          "duration": 1.52,
+          "wordIds": [
+            "w_2_1",
+            "w_2_2",
+            "w_2_3",
+            "w_2_4"
+          ],
+          "styleOverride": null
+        },
+        {
+          "id": "clip_c_3",
+          "kind": "caption",
+          "start": 3,
+          "duration": 0.74,
+          "wordIds": [
+            "w_3_1",
+            "w_3_2",
+            "w_3_3",
+            "w_3_4"
+          ],
+          "styleOverride": null
+        },
+        {
+          "id": "clip_c_4",
+          "kind": "caption",
+          "start": 3.74,
+          "duration": 1.42,
+          "wordIds": [
+            "w_4_1",
+            "w_4_2",
+            "w_4_3",
+            "w_4_4"
+          ],
+          "styleOverride": null
+        },
+        {
+          "id": "clip_c_5",
+          "kind": "caption",
+          "start": 5.16,
+          "duration": 0.98,
+          "wordIds": [
+            "w_5_1",
+            "w_5_2",
+            "w_5_3",
+            "w_5_4"
+          ],
+          "styleOverride": null
+        },
+        {
+          "id": "clip_c_6",
+          "kind": "caption",
+          "start": 6.14,
+          "duration": 1.52,
+          "wordIds": [
+            "w_6_1",
+            "w_6_2",
+            "w_6_3",
+            "w_6_4"
+          ],
+          "styleOverride": null
+        },
+        {
+          "id": "clip_c_7",
+          "kind": "caption",
+          "start": 7.66,
+          "duration": 1.22,
+          "wordIds": [
+            "w_7_1",
+            "w_7_2",
+            "w_7_3",
+            "w_7_4"
+          ],
+          "styleOverride": null
+        },
+        {
+          "id": "clip_c_8",
+          "kind": "caption",
+          "start": 8.88,
+          "duration": 1.12,
+          "wordIds": [
+            "w_8_1",
+            "w_8_2",
+            "w_8_3",
+            "w_8_4"
+          ],
+          "styleOverride": null
+        },
+        {
+          "id": "clip_c_9",
+          "kind": "caption",
+          "start": 10,
+          "duration": 0.86,
+          "wordIds": [
+            "w_9_1",
+            "w_9_2",
+            "w_9_3",
+            "w_9_4"
+          ],
+          "styleOverride": null
+        },
+        {
+          "id": "clip_c_10",
+          "kind": "caption",
+          "start": 10.86,
+          "duration": 0.8,
+          "wordIds": [
+            "w_10_1",
+            "w_10_2",
+            "w_10_3",
+            "w_10_4"
+          ],
+          "styleOverride": null
+        },
+        {
+          "id": "clip_c_11",
+          "kind": "caption",
+          "start": 11.66,
+          "duration": 0.98,
+          "wordIds": [
+            "w_11_1",
+            "w_11_2",
+            "w_11_3",
+            "w_11_4"
+          ],
+          "styleOverride": null
+        },
+        {
+          "id": "clip_c_12",
+          "kind": "caption",
+          "start": 12.64,
+          "duration": 0.86,
+          "wordIds": [
+            "w_12_1",
+            "w_12_2",
+            "w_12_3",
+            "w_12_4"
+          ],
+          "styleOverride": null
+        },
+        {
+          "id": "clip_c_13",
+          "kind": "caption",
+          "start": 13.5,
+          "duration": 16.5,
+          "wordIds": [
+            "w_13_1",
+            "w_13_2"
+          ],
+          "styleOverride": null
+        }
+      ],
+      "brollSceneCuts": [],
+      "audioTracks": [],
+      "lastExport": null
     }
   },
   "uploadSessions": {
@@ -62089,6 +63004,28 @@
       "sourceFile": "D:\\AAKASH\\motion graphics\\moonshot-clone\\uploads\\session_mv7l8tmd_07g0t\\source.mp4",
       "contentType": "video/mp4",
       "previewFilePath": "D:\\AAKASH\\motion graphics\\moonshot-clone\\uploads\\session_mv7l8tmd_07g0t\\source.preview-720x1280-v7.mp4"
+    },
+    "session_mv9qwwkd_ue0eq": {
+      "id": "session_mv9qwwkd_ue0eq",
+      "uploadDir": "D:\\AAKASH\\motion graphics\\moonshot-clone\\uploads\\session_mv9qwwkd_ue0eq",
+      "sourceFile": "D:\\AAKASH\\motion graphics\\moonshot-clone\\uploads\\session_mv9qwwkd_ue0eq\\source.mp4",
+      "relPath": "/uploads/session_mv9qwwkd_ue0eq/source.mp4",
+      "ext": "mp4",
+      "contentType": "video/mp4",
+      "createdAt": 1792081263325,
+      "sizeBytes": 20463733,
+      "probe": {
+        "duration": 22.27,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "hasAudio": true,
+        "codec": "hevc",
+        "size": 20463733,
+        "sha256": "31ee0d286ed4a61c26ef0e22e76f3ecc0dfc37019c1820075d528329b97a9bf9"
+      },
+      "previewFilePath": "D:\\AAKASH\\motion graphics\\moonshot-clone\\uploads\\session_mv9qwwkd_ue0eq\\source.preview-1080x1920-v7.mp4",
+      "previewUrl": "/uploads/session_mv9qwwkd_ue0eq/source.preview-1080x1920-v7.mp4"
     }
   },
   "videoSessions": {
@@ -107118,6 +108055,703 @@
       "previewFilePath": "D:\\AAKASH\\motion graphics\\moonshot-clone\\uploads\\session_mv7l8tmd_07g0t\\source.preview-720x1280-v7.mp4",
       "exportOutputFile": "D:\\AAKASH\\motion graphics\\moonshot-clone\\exports\\job_mv7l9khp_st02n\\moonshot_export_job_mv7l9khp_st02n.mp4",
       "exportDownloadUrl": "/api/render/file/job_mv7l9khp_st02n?dl=1"
+    },
+    "session_mv9qwwkd_ue0eq": {
+      "sessionId": "session_mv9qwwkd_ue0eq",
+      "projectId": "proj_mv9qx99o_j6dtc",
+      "sourceAssetId": "src_proj_mv9qx99o_j6dtc",
+      "sourceFile": "D:\\AAKASH\\motion graphics\\moonshot-clone\\uploads\\session_mv9qwwkd_ue0eq\\source.mp4",
+      "previewFilePath": "D:\\AAKASH\\motion graphics\\moonshot-clone\\uploads\\session_mv9qwwkd_ue0eq\\source.preview-1080x1920-v7.mp4",
+      "previewUrl": "/uploads/session_mv9qwwkd_ue0eq/source.preview-1080x1920-v7.mp4",
+      "audioFile": "D:\\AAKASH\\motion graphics\\moonshot-clone\\uploads\\session_mv9qwwkd_ue0eq\\audio.wav",
+      "transcriptFile": "D:\\AAKASH\\motion graphics\\moonshot-clone\\uploads\\session_mv9qwwkd_ue0eq\\transcript.json",
+      "metadata": {
+        "duration": 22.27,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "sizeBytes": 20463733,
+        "sha256": "31ee0d286ed4a61c26ef0e22e76f3ecc0dfc37019c1820075d528329b97a9bf9"
+      },
+      "transcript": [
+        {
+          "id": "c_1",
+          "start": 0,
+          "end": 1.48,
+          "text": "दिग्गी रोड, दिग्गी रोड,",
+          "textLatn": "Diggee Road Diggee Road",
+          "words": [
+            {
+              "id": "w_1_1",
+              "text": "दिग्गी",
+              "textLatn": "Diggee",
+              "start": 0,
+              "end": 0.26,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_1_2",
+              "text": "रोड,",
+              "textLatn": "Road",
+              "start": 0.26,
+              "end": 0.62,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_1_3",
+              "text": "दिग्गी",
+              "textLatn": "Diggee",
+              "start": 0.62,
+              "end": 1.1,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_1_4",
+              "text": "रोड,",
+              "textLatn": "Road",
+              "start": 1.1,
+              "end": 1.48,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_2",
+          "start": 1.48,
+          "end": 3,
+          "text": "दिग्गी रोड, हम लोग,",
+          "textLatn": "Diggee Road hum Log",
+          "words": [
+            {
+              "id": "w_2_1",
+              "text": "दिग्गी",
+              "textLatn": "Diggee",
+              "start": 1.48,
+              "end": 1.8,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_2_2",
+              "text": "रोड,",
+              "textLatn": "Road",
+              "start": 1.8,
+              "end": 2.18,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_2_3",
+              "text": "हम",
+              "textLatn": "hum",
+              "start": 2.18,
+              "end": 2.48,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_2_4",
+              "text": "लोग,",
+              "textLatn": "Log",
+              "start": 2.48,
+              "end": 3,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_3",
+          "start": 3,
+          "end": 3.74,
+          "text": "आप लोगों की demand",
+          "textLatn": "Aapa Logon ki demand",
+          "words": [
+            {
+              "id": "w_3_1",
+              "text": "आप",
+              "textLatn": "Aapa",
+              "start": 3,
+              "end": 3.16,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_3_2",
+              "text": "लोगों",
+              "textLatn": "Logon",
+              "start": 3.16,
+              "end": 3.4,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_3_3",
+              "text": "की",
+              "textLatn": "ki",
+              "start": 3.4,
+              "end": 3.44,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_3_4",
+              "text": "demand",
+              "textLatn": "demand",
+              "start": 3.44,
+              "end": 3.74,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_4",
+          "start": 3.74,
+          "end": 5.16,
+          "text": "के उनसार, हमारा project",
+          "textLatn": "ke Unasaara hamara project",
+          "words": [
+            {
+              "id": "w_4_1",
+              "text": "के",
+              "textLatn": "ke",
+              "start": 3.74,
+              "end": 3.84,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_4_2",
+              "text": "उनसार,",
+              "textLatn": "Unasaara",
+              "start": 3.84,
+              "end": 4.64,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_4_3",
+              "text": "हमारा",
+              "textLatn": "hamara",
+              "start": 4.64,
+              "end": 4.84,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_4_4",
+              "text": "project",
+              "textLatn": "project",
+              "start": 4.84,
+              "end": 5.16,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_5",
+          "start": 5.16,
+          "end": 6.14,
+          "text": "ले आचुके हैं, जो",
+          "textLatn": "le Aachuke hain jo",
+          "words": [
+            {
+              "id": "w_5_1",
+              "text": "ले",
+              "textLatn": "le",
+              "start": 5.16,
+              "end": 5.56,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_5_2",
+              "text": "आचुके",
+              "textLatn": "Aachuke",
+              "start": 5.56,
+              "end": 5.9,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_5_3",
+              "text": "हैं,",
+              "textLatn": "hain",
+              "start": 5.9,
+              "end": 6.06,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_5_4",
+              "text": "जो",
+              "textLatn": "jo",
+              "start": 6.06,
+              "end": 6.14,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_6",
+          "start": 6.14,
+          "end": 7.66,
+          "text": "मात्र दिग्गी रोड से",
+          "textLatn": "Maatra Diggee Road se",
+          "words": [
+            {
+              "id": "w_6_1",
+              "text": "मात्र",
+              "textLatn": "Maatra",
+              "start": 6.14,
+              "end": 6.66,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_6_2",
+              "text": "दिग्गी",
+              "textLatn": "Diggee",
+              "start": 6.66,
+              "end": 7.34,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_6_3",
+              "text": "रोड",
+              "textLatn": "Road",
+              "start": 7.34,
+              "end": 7.52,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_6_4",
+              "text": "से",
+              "textLatn": "se",
+              "start": 7.52,
+              "end": 7.66,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_7",
+          "start": 7.66,
+          "end": 8.88,
+          "text": "3 किलोमेटर अंदर है,",
+          "textLatn": "3 Kilometara andar hai",
+          "words": [
+            {
+              "id": "w_7_1",
+              "text": "3",
+              "textLatn": "3",
+              "start": 7.66,
+              "end": 7.9,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_7_2",
+              "text": "किलोमेटर",
+              "textLatn": "Kilometara",
+              "start": 7.9,
+              "end": 8.3,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_7_3",
+              "text": "अंदर",
+              "textLatn": "andar",
+              "start": 8.3,
+              "end": 8.64,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_7_4",
+              "text": "है,",
+              "textLatn": "hai",
+              "start": 8.64,
+              "end": 8.88,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_8",
+          "start": 8.88,
+          "end": 10,
+          "text": "और नोले सिटी के",
+          "textLatn": "aur Nole Sitee ke",
+          "words": [
+            {
+              "id": "w_8_1",
+              "text": "और",
+              "textLatn": "aur",
+              "start": 8.88,
+              "end": 9.24,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_8_2",
+              "text": "नोले",
+              "textLatn": "Nole",
+              "start": 9.24,
+              "end": 9.64,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_8_3",
+              "text": "सिटी",
+              "textLatn": "Sitee",
+              "start": 9.64,
+              "end": 9.86,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_8_4",
+              "text": "के",
+              "textLatn": "ke",
+              "start": 9.86,
+              "end": 10,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_9",
+          "start": 10,
+          "end": 10.86,
+          "text": "पास रहने वाला है,",
+          "textLatn": "Paasa rehne Vaalaa hai",
+          "words": [
+            {
+              "id": "w_9_1",
+              "text": "पास",
+              "textLatn": "Paasa",
+              "start": 10,
+              "end": 10.12,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_9_2",
+              "text": "रहने",
+              "textLatn": "rehne",
+              "start": 10.12,
+              "end": 10.46,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_9_3",
+              "text": "वाला",
+              "textLatn": "Vaalaa",
+              "start": 10.46,
+              "end": 10.66,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_9_4",
+              "text": "है,",
+              "textLatn": "hai",
+              "start": 10.66,
+              "end": 10.86,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_10",
+          "start": 10.86,
+          "end": 11.66,
+          "text": "इस project की बात",
+          "textLatn": "is project ki baat",
+          "words": [
+            {
+              "id": "w_10_1",
+              "text": "इस",
+              "textLatn": "is",
+              "start": 10.86,
+              "end": 11.08,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_10_2",
+              "text": "project",
+              "textLatn": "project",
+              "start": 11.08,
+              "end": 11.4,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_10_3",
+              "text": "की",
+              "textLatn": "ki",
+              "start": 11.4,
+              "end": 11.52,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_10_4",
+              "text": "बात",
+              "textLatn": "baat",
+              "start": 11.52,
+              "end": 11.66,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_11",
+          "start": 11.66,
+          "end": 12.64,
+          "text": "करो, यह 30 बीगा",
+          "textLatn": "karo Yaha 30 Beegaa",
+          "words": [
+            {
+              "id": "w_11_1",
+              "text": "करो,",
+              "textLatn": "karo",
+              "start": 11.66,
+              "end": 11.9,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_11_2",
+              "text": "यह",
+              "textLatn": "Yaha",
+              "start": 11.9,
+              "end": 12,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_11_3",
+              "text": "30",
+              "textLatn": "30",
+              "start": 12,
+              "end": 12.36,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_11_4",
+              "text": "बीगा",
+              "textLatn": "Beegaa",
+              "start": 12.36,
+              "end": 12.64,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_12",
+          "start": 12.64,
+          "end": 13.5,
+          "text": "का JDA प्रत रेर",
+          "textLatn": "ka JDA Prata Rera",
+          "words": [
+            {
+              "id": "w_12_1",
+              "text": "का",
+              "textLatn": "ka",
+              "start": 12.64,
+              "end": 12.78,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_12_2",
+              "text": "JDA",
+              "textLatn": "JDA",
+              "start": 12.78,
+              "end": 13.1,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_12_3",
+              "text": "प्रत",
+              "textLatn": "Prata",
+              "start": 13.1,
+              "end": 13.3,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_12_4",
+              "text": "रेर",
+              "textLatn": "Rera",
+              "start": 13.3,
+              "end": 13.5,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        },
+        {
+          "id": "c_13",
+          "start": 13.5,
+          "end": 30,
+          "text": "अप्रूब रहन",
+          "textLatn": "Aprooba Rahana",
+          "words": [
+            {
+              "id": "w_13_1",
+              "text": "अप्रूब",
+              "textLatn": "Aprooba",
+              "start": 13.5,
+              "end": 29.98,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            },
+            {
+              "id": "w_13_2",
+              "text": "रहन",
+              "textLatn": "Rahana",
+              "start": 29.98,
+              "end": 30,
+              "confidence": 0.95,
+              "highlight": false,
+              "emphasisTier": 0,
+              "style": null
+            }
+          ]
+        }
+      ],
+      "wordCount": 50,
+      "language": "Hindi",
+      "captionStyling": {
+        "presetId": "social-word-pink"
+      },
+      "renderJobId": null,
+      "renderStatus": "idle",
+      "lastExport": null,
+      "createdAt": "2026-10-15T16:21:19.790Z",
+      "updatedAt": "2026-10-15T16:21:20.282Z"
     }
   },
   "renderJobs": {

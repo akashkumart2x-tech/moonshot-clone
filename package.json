@@ -19,7 +19,6 @@
   "license": "MIT",
   "dependencies": {
     "googleapis": "^185.0.0",
-    "pg": "^8.23.1",
-    "puppeteer-core": "^25.13.0"
+    "pg": "^8.23.1"
   }
 }

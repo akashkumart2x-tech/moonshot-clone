@@ -10,5 +10,8 @@ scratch/*
 *.log
 test_verification_runs
 rebuilt_test_runs
+test_videos
+test_assets
+*.wav
 .env
 .env.local

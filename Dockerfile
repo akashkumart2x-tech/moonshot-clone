@@ -1,10 +1,10 @@
 # Production Multi-Stage Dockerfile for Moonshot Clone
 # High-performance AI Video Editor with LibASS Subtitle Burning & Word Alignment
 
-FROM node:20-bullseye-slim
+FROM node:20-bookworm-slim
 
 # Install system dependencies: FFmpeg (with libass enabled), Python3, python3-requests, Fontconfig, and standard fonts
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update -o Acquire::Check-Valid-Until=false && apt-get install -y --no-install-recommends \
     ffmpeg \
     python3 \
     python3-requests \
