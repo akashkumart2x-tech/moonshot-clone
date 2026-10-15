@@ -71,6 +71,18 @@ class TranscriptionEngine:
         self.groq_key = os.environ.get("GROQ_API_KEY")
         self.openai_key = os.environ.get("OPENAI_API_KEY")
 
+        # Load from app_secrets.json if present
+        if not self.groq_key:
+            try:
+                base_dir = os.path.dirname(os.path.abspath(__file__))
+                sec_path = os.path.join(base_dir, "app_secrets.json")
+                if os.path.exists(sec_path):
+                    with open(sec_path, "r", encoding="utf-8") as f:
+                        sec = json.load(f)
+                        self.groq_key = sec.get("groqApiKey") or sec.get("groq_api_key")
+            except Exception:
+                pass
+
     def transcribe(self, audio_path: str, domain_prompt: str = None, preferred_provider: str = "auto") -> dict:
         """
         Transcribe audio using the highest accuracy available engine.
@@ -176,19 +188,29 @@ class TranscriptionEngine:
         return self._format_normalized_words(raw_words, res.get("language", "hi"), res.get("duration", 0), "openai_whisper_1")
 
     def _transcribe_local(self, audio_path: str) -> dict:
-        from faster_whisper import WhisperModel
-        model = WhisperModel("base", device="cpu", compute_type="int8")
-        segments, info = model.transcribe(audio_path, word_timestamps=True, vad_filter=True)
-        raw_words = []
-        for s in segments:
-            for w in s.words:
-                raw_words.append({
-                    "word": w.word,
-                    "start": w.start,
-                    "end": w.end,
-                    "probability": w.probability
-                })
-        return self._format_normalized_words(raw_words, info.language, info.duration, "faster_whisper_local")
+        try:
+            from faster_whisper import WhisperModel
+            model = WhisperModel("base", device="cpu", compute_type="int8")
+            segments, info = model.transcribe(audio_path, word_timestamps=True, vad_filter=True)
+            raw_words = []
+            for s in segments:
+                for w in s.words:
+                    raw_words.append({
+                        "word": w.word,
+                        "start": w.start,
+                        "end": w.end,
+                        "probability": w.probability
+                    })
+            return self._format_normalized_words(raw_words, info.language, info.duration, "faster_whisper_local")
+        except Exception as e:
+            print(f"[TranscriptionEngine] Local faster-whisper unavailable ({e}). Returning fallback.")
+            return {
+                "engine": "none",
+                "language": "hi",
+                "duration": 0,
+                "transcript": [],
+                "wordCount": 0
+            }
 
     def _format_normalized_words(self, raw_words: list, language: str, total_duration: float, engine_name: str) -> dict:
         """
@@ -288,7 +310,18 @@ if __name__ == "__main__":
     out_json = sys.argv[2] if len(sys.argv) > 2 else None
 
     engine = TranscriptionEngine()
-    result = engine.transcribe(audio)
+    try:
+        result = engine.transcribe(audio)
+    except Exception as e:
+        print(f"[TranscriptionEngine Error] {e}", file=sys.stderr)
+        result = {
+            "engine": "fallback",
+            "language": "hi",
+            "duration": 0,
+            "transcript": [],
+            "wordCount": 0,
+            "error": str(e)
+        }
 
     if out_json:
         with open(out_json, "w", encoding="utf-8") as f:

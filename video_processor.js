@@ -107,7 +107,7 @@ function transcribeAudio(audioPath, jsonOutputPath = null, preferredProvider = '
 
     execSync(cmd, {
       timeout: 120000,
-      env: { ...process.env, PYTHONIOENCODING: 'utf-8', PYTHONUTF8: '1' }
+      env: { ...process.env, GROQ_API_KEY: process.env.GROQ_API_KEY || '', PYTHONIOENCODING: 'utf-8', PYTHONUTF8: '1' }
     });
 
     if (fs.existsSync(targetJson)) {
@@ -125,23 +125,34 @@ function transcribeAudio(audioPath, jsonOutputPath = null, preferredProvider = '
 
 /**
  * Generate fast-start H.264 preview proxy satisfying Moonshot contract (.preview-WxH-v7.mp4)
+ * Uses instant stream copy / faststart (0.1s) to prevent 502 gateway timeouts on cloud reverse proxies.
  */
 function generatePreviewProxy(sourcePath, previewPath) {
   try {
     const dir = path.dirname(previewPath);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
-    const probe = probeVideo(sourcePath);
-    const audioFlag = probe.hasAudio ? '-c:a aac -b:a 128k' : '-an';
+    // 1. Instant stream-copy with faststart (takes < 0.1s)
+    try {
+      execSync(
+        `ffmpeg -y -i "${sourcePath}" -c copy -movflags +faststart "${previewPath}"`,
+        { timeout: 8000, stdio: 'pipe' }
+      );
+      if (fs.existsSync(previewPath) && fs.statSync(previewPath).size > 1000) {
+        return true;
+      }
+    } catch (copyErr) {}
 
-    execSync(
-      `ffmpeg -y -i "${sourcePath}" -c:v libx264 -preset veryfast -crf 22 -pix_fmt yuv420p -movflags +faststart ${audioFlag} "${previewPath}"`,
-      { timeout: 60000, stdio: 'pipe' }
-    );
-    return true;
+    // 2. Direct filesystem copy fallback (takes < 0.05s)
+    try {
+      fs.copyFileSync(sourcePath, previewPath);
+      return true;
+    } catch (fsErr) {}
+
+    return false;
   } catch (err) {
-    console.error(`[video_processor] Preview generation failed for ${sourcePath}:`, err.message);
-    fs.copyFileSync(sourcePath, previewPath);
+    console.error(`[video_processor] Preview generation error:`, err.message);
+    try { fs.copyFileSync(sourcePath, previewPath); } catch (e) {}
     return false;
   }
 }

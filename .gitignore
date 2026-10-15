@@ -9,9 +9,12 @@ test_verification_runs/
 .env
 .env.local
 google_credentials.json
+app_secrets.json
 data/google_drive_tokens.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .DS_Store
+__pycache__/
+*.pyc
 

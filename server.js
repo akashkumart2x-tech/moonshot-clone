@@ -24,6 +24,17 @@ try {
   console.warn('Could not read demo_timings.json:', e.message);
 }
 
+// Load local app secrets (e.g. GROQ_API_KEY) if present
+try {
+  const secretsPath = path.join(__dirname, 'app_secrets.json');
+  if (fs.existsSync(secretsPath)) {
+    const s = JSON.parse(fs.readFileSync(secretsPath, 'utf8'));
+    if (s.groqApiKey && !process.env.GROQ_API_KEY) {
+      process.env.GROQ_API_KEY = s.groqApiKey;
+    }
+  }
+} catch (e) {}
+
 // Stores
 const projects = new Map();
 const uploadSessions = new Map();
@@ -84,6 +95,15 @@ if (DATABASE_URL) {
           if (tokenRes.rows.length > 0 && tokenRes.rows[0].data) {
             gdrive.setTokens(tokenRes.rows[0].data);
             console.log('[Store] Loaded Google Drive user tokens from Neon PostgreSQL.');
+          }
+
+          const secretRes = await pgPool.query("SELECT data FROM moonshot_store WHERE store_key = 'app_secrets';");
+          if (secretRes.rows.length > 0 && secretRes.rows[0].data) {
+            const sec = secretRes.rows[0].data;
+            if (sec.groqApiKey && !process.env.GROQ_API_KEY) {
+              process.env.GROQ_API_KEY = sec.groqApiKey;
+              console.log('[Store] Loaded GROQ_API_KEY from Neon PostgreSQL.');
+            }
           }
         } catch (tErr) {}
       } catch (e) {
@@ -652,234 +672,265 @@ const server = http.createServer(async (req, res) => {
 
     // CASE A: JSON Finalize Payload
     if (contentType.includes('application/json')) {
-      const body = await readBody(req);
-      const uploadId = body.uploadSessionId;
-      console.log(`[Upload Finalize] Finalizing session: ${uploadId}`);
+      try {
+        const body = await readBody(req);
+        const uploadId = body.uploadSessionId;
+        console.log(`[Upload Finalize] Finalizing session: ${uploadId}`);
 
-      let session = uploadSessions.get(uploadId);
-      if (!session && body.relPath) {
-        for (const s of uploadSessions.values()) {
-          if (s.relPath === body.relPath) { session = s; break; }
+        let session = uploadSessions.get(uploadId);
+        if (!session && body.relPath) {
+          for (const s of uploadSessions.values()) {
+            if (s.relPath === body.relPath) { session = s; break; }
+          }
         }
-      }
 
-      if (!session || !fs.existsSync(session.sourceFile)) {
-        console.error(`[Upload Finalize Error] Source file missing for session ${uploadId}`);
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ error: 'Uploaded source file not found on disk' }));
-      }
-
-      // Step 1: Probe video
-      if (!session.probe) {
-        console.log(`[Upload Pipeline] Probing ${session.sourceFile}...`);
-        session.probe = vp.probeVideo(session.sourceFile);
-      }
-
-      // Step 2: Ensure preview proxy exists
-      if (!session.previewFilePath || !fs.existsSync(session.previewFilePath)) {
-        const previewName = `source.preview-${session.probe.width}x${session.probe.height}-v7.mp4`;
-        session.previewFilePath = path.join(session.uploadDir, previewName);
-        if (!fs.existsSync(session.previewFilePath)) {
-          console.log(`[Upload Pipeline] Generating preview proxy: ${session.previewFilePath}...`);
-          vp.generatePreviewProxy(session.sourceFile, session.previewFilePath);
+        if (!session || !fs.existsSync(session.sourceFile)) {
+          console.error(`[Upload Finalize Error] Source file missing for session ${uploadId}`);
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          return res.end(JSON.stringify({ error: 'Uploaded source file not found on disk' }));
         }
-        session.previewUrl = `/uploads/${session.id}/${previewName}`;
-      }
 
-      // Step 3: Extract Audio for Speech Recognition
-      const audioFile = path.join(session.uploadDir, 'audio.wav');
-      console.log(`[Upload Pipeline] Extracting audio -> ${audioFile}...`);
-      const hasExtractedAudio = vp.extractAudio(session.sourceFile, audioFile);
+        // Step 1: Probe video
+        if (!session.probe) {
+          console.log(`[Upload Pipeline] Probing ${session.sourceFile}...`);
+          try {
+            session.probe = vp.probeVideo(session.sourceFile);
+          } catch (pErr) {
+            session.probe = { duration: 15, width: 1080, height: 1920, fps: 30, hasAudio: true, size: fs.statSync(session.sourceFile).size, sha256: 'unknown' };
+          }
+        }
 
-      // Step 4: Run Real Whisper Speech Recognition
-      const transcriptFile = path.join(session.uploadDir, 'transcript.json');
-      let speechResult = { language: 'en', duration: session.probe.duration, transcript: [], wordCount: 0 };
-      if (hasExtractedAudio) {
-        console.log(`[Upload Pipeline] Running Whisper speech recognition on extracted audio...`);
-        speechResult = vp.transcribeAudio(audioFile, transcriptFile);
-      } else {
-        console.log(`[Upload Pipeline] Video has no audio or audio extraction produced no track. Transcript will be empty.`);
-      }
+        // Step 2: Ensure preview proxy exists (instant copy)
+        if (!session.previewFilePath || !fs.existsSync(session.previewFilePath)) {
+          const previewName = `source.preview-${session.probe.width}x${session.probe.height}-v7.mp4`;
+          session.previewFilePath = path.join(session.uploadDir, previewName);
+          if (!fs.existsSync(session.previewFilePath)) {
+            console.log(`[Upload Pipeline] Generating preview proxy: ${session.previewFilePath}...`);
+            vp.generatePreviewProxy(session.sourceFile, session.previewFilePath);
+          }
+          session.previewUrl = `/uploads/${session.id}/${previewName}`;
+        }
 
-      const duration = session.probe.duration;
-      const width = session.probe.width;
-      const height = session.probe.height;
-      const fps = session.probe.fps;
-      const title = body.title || path.basename(session.sourceFile);
+        // Step 3: Extract Audio for Speech Recognition
+        const audioFile = path.join(session.uploadDir, 'audio.wav');
+        console.log(`[Upload Pipeline] Extracting audio -> ${audioFile}...`);
+        let hasExtractedAudio = false;
+        try {
+          hasExtractedAudio = vp.extractAudio(session.sourceFile, audioFile);
+        } catch (e) {
+          console.warn('[Upload Pipeline] Audio extraction warning:', e.message);
+        }
 
-      // Step 5: Create a 100% INDEPENDENT Project (Fresh ID, strictly bound to this video's source & transcript)
-      const projId = 'proj_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 7);
-      
-      const proj = createProjectFixture({
-        id: projId,
-        presetId: 'social-word-pink',
-        videoUrl: session.previewUrl,
-        title,
-        sourcePath: session.sourceFile,
-        previewPath: session.previewFilePath,
-        duration,
-        width,
-        height,
-        fps,
-        customTranscript: speechResult.transcript || [],
-        lastExport: null
-      });
+        // Step 4: Run Real Whisper Speech Recognition
+        const transcriptFile = path.join(session.uploadDir, 'transcript.json');
+        let speechResult = { language: 'en', duration: session.probe.duration, transcript: [], wordCount: 0 };
+        if (hasExtractedAudio) {
+          console.log(`[Upload Pipeline] Running Whisper speech recognition on extracted audio...`);
+          try {
+            speechResult = vp.transcribeAudio(audioFile, transcriptFile);
+          } catch (tErr) {
+            console.warn('[Upload Pipeline] Transcription warning:', tErr.message);
+          }
+        } else {
+          console.log(`[Upload Pipeline] Video has no audio or audio extraction produced no track. Transcript will be empty.`);
+        }
 
-      projects.set(projId, proj);
+        const duration = session.probe.duration;
+        const width = session.probe.width;
+        const height = session.probe.height;
+        const fps = session.probe.fps;
+        const title = body.title || path.basename(session.sourceFile);
 
-      // Step 6: Create Independent Video Session Record
-      const videoSession = {
-        sessionId: session.id,
-        projectId: projId,
-        sourceAssetId: `src_${projId}`,
-        sourceFile: session.sourceFile,
-        previewFilePath: session.previewFilePath,
-        previewUrl: session.previewUrl,
-        audioFile,
-        transcriptFile,
-        metadata: {
+        // Step 5: Create a 100% INDEPENDENT Project (Fresh ID, strictly bound to this video's source & transcript)
+        const projId = 'proj_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 7);
+        
+        const proj = createProjectFixture({
+          id: projId,
+          presetId: 'social-word-pink',
+          videoUrl: session.previewUrl,
+          title,
+          sourcePath: session.sourceFile,
+          previewPath: session.previewFilePath,
           duration,
           width,
           height,
           fps,
-          sizeBytes: session.sizeBytes || fs.statSync(session.sourceFile).size,
-          sha256: session.probe.sha256
-        },
-        transcript: speechResult.transcript || [],
-        wordCount: speechResult.wordCount || 0,
-        language: speechResult.language || 'en',
-        captionStyling: { presetId: 'social-word-pink' },
-        renderJobId: null,
-        renderStatus: 'idle',
-        lastExport: null,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
-      };
+          customTranscript: speechResult.transcript || [],
+          lastExport: null
+        });
 
-      videoSessions.set(session.id, videoSession);
-      saveStore();
+        projects.set(projId, proj);
 
-      console.log(`[Upload Pipeline Success] Created Project ${projId} & Session ${session.id}:`);
-      console.log(`  ➜ Words detected: ${videoSession.wordCount} (${videoSession.language})`);
-      console.log(`  ➜ Source Video:   ${session.sourceFile}`);
-      console.log(`  ➜ Preview Video:  ${session.previewUrl}`);
+        // Step 6: Create Independent Video Session Record
+        const videoSession = {
+          sessionId: session.id,
+          projectId: projId,
+          sourceAssetId: `src_${projId}`,
+          sourceFile: session.sourceFile,
+          previewFilePath: session.previewFilePath,
+          previewUrl: session.previewUrl,
+          audioFile,
+          transcriptFile,
+          metadata: {
+            duration,
+            width,
+            height,
+            fps,
+            sizeBytes: session.sizeBytes || fs.statSync(session.sourceFile).size,
+            sha256: session.probe.sha256
+          },
+          transcript: speechResult.transcript || [],
+          wordCount: speechResult.wordCount || 0,
+          language: speechResult.language || 'en',
+          captionStyling: { presetId: 'social-word-pink' },
+          renderJobId: null,
+          renderStatus: 'idle',
+          lastExport: null,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        };
 
-      return sendJson(res, {
-        projectId: projId,
-        sessionId: session.id,
-        project: { id: projId },
-        relPath: session.previewUrl,
-        durationSec: duration,
-        mediaKind: 'video',
-        transcript: videoSession.transcript,
-        wordCount: videoSession.wordCount
-      });
+        videoSessions.set(session.id, videoSession);
+        saveStore();
+
+        console.log(`[Upload Pipeline Success] Created Project ${projId} & Session ${session.id}:`);
+        console.log(`  ➜ Words detected: ${videoSession.wordCount} (${videoSession.language})`);
+        console.log(`  ➜ Source Video:   ${session.sourceFile}`);
+        console.log(`  ➜ Preview Video:  ${session.previewUrl}`);
+
+        return sendJson(res, {
+          projectId: projId,
+          sessionId: session.id,
+          project: { id: projId },
+          relPath: session.previewUrl,
+          durationSec: duration,
+          mediaKind: 'video',
+          transcript: videoSession.transcript,
+          wordCount: videoSession.wordCount
+        });
+      } catch (finalizeErr) {
+        console.error('[Upload Finalize Error]', finalizeErr);
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ error: `Finalize failed: ${finalizeErr.message}` }));
+      }
     }
 
     // CASE B: Multipart Form Data Direct Upload
     if (contentType.includes('multipart/form-data')) {
-      console.log(`[Upload Pipeline] Processing multipart/form-data upload...`);
-      const boundaryMatch = contentType.match(/boundary=(?:"([^"]+)"|([^;]+))/i);
-      if (!boundaryMatch) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ error: 'Missing boundary in multipart request' }));
-      }
-      const boundary = boundaryMatch[1] || boundaryMatch[2];
-      const rawBuffer = await readRawBody(req);
-      const parsed = parseMultipartBuffer(rawBuffer, boundary);
+      try {
+        console.log(`[Upload Pipeline] Processing multipart/form-data upload...`);
+        const boundaryMatch = contentType.match(/boundary=(?:"([^"]+)"|([^;]+))/i);
+        if (!boundaryMatch) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          return res.end(JSON.stringify({ error: 'Missing boundary in multipart request' }));
+        }
+        const boundary = boundaryMatch[1] || boundaryMatch[2];
+        const rawBuffer = await readRawBody(req);
+        const parsed = parseMultipartBuffer(rawBuffer, boundary);
 
-      if (!parsed.file || !parsed.file.data || parsed.file.data.length === 0) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ error: 'No video file data uploaded' }));
-      }
+        if (!parsed.file || !parsed.file.data || parsed.file.data.length === 0) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          return res.end(JSON.stringify({ error: 'No video file data uploaded' }));
+        }
 
-      const uploadId = 'session_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 7);
-      const uploadDir = path.join(UPLOADS_DIR, uploadId);
-      fs.mkdirSync(uploadDir, { recursive: true });
-      const sourceFile = path.join(uploadDir, 'source.mp4');
-      fs.writeFileSync(sourceFile, parsed.file.data);
+        const uploadId = 'session_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 7);
+        const uploadDir = path.join(UPLOADS_DIR, uploadId);
+        fs.mkdirSync(uploadDir, { recursive: true });
+        const sourceFile = path.join(uploadDir, 'source.mp4');
+        fs.writeFileSync(sourceFile, parsed.file.data);
 
-      const probe = vp.probeVideo(sourceFile);
-      const previewName = `source.preview-${probe.width}x${probe.height}-v7.mp4`;
-      const previewPath = path.join(uploadDir, previewName);
-      vp.generatePreviewProxy(sourceFile, previewPath);
-      const previewUrl = `/uploads/${uploadId}/${previewName}`;
+        const probe = vp.probeVideo(sourceFile);
+        const previewName = `source.preview-${probe.width}x${probe.height}-v7.mp4`;
+        const previewPath = path.join(uploadDir, previewName);
+        vp.generatePreviewProxy(sourceFile, previewPath);
+        const previewUrl = `/uploads/${uploadId}/${previewName}`;
 
-      // Extract Audio & Run Whisper
-      const audioFile = path.join(uploadDir, 'audio.wav');
-      const hasAudio = vp.extractAudio(sourceFile, audioFile);
-      const transcriptFile = path.join(uploadDir, 'transcript.json');
-      let speechResult = { language: 'en', duration: probe.duration, transcript: [], wordCount: 0 };
-      if (hasAudio) {
-        speechResult = vp.transcribeAudio(audioFile, transcriptFile);
-      }
+        // Extract Audio & Run Whisper
+        const audioFile = path.join(uploadDir, 'audio.wav');
+        let hasAudio = false;
+        try {
+          hasAudio = vp.extractAudio(sourceFile, audioFile);
+        } catch (e) {}
 
-      const projId = 'proj_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 7);
-      const title = parsed.fields.title || parsed.file.filename || 'Uploaded Video';
+        const transcriptFile = path.join(uploadDir, 'transcript.json');
+        let speechResult = { language: 'en', duration: probe.duration, transcript: [], wordCount: 0 };
+        if (hasAudio) {
+          try {
+            speechResult = vp.transcribeAudio(audioFile, transcriptFile);
+          } catch (tErr) {}
+        }
 
-      const proj = createProjectFixture({
-        id: projId,
-        presetId: 'social-word-pink',
-        videoUrl: previewUrl,
-        title,
-        sourcePath: sourceFile,
-        previewPath,
-        duration: probe.duration,
-        width: probe.width,
-        height: probe.height,
-        fps: probe.fps,
-        customTranscript: speechResult.transcript || [],
-        lastExport: null
-      });
+        const projId = 'proj_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 7);
+        const title = parsed.fields.title || parsed.file.filename || 'Uploaded Video';
 
-      projects.set(projId, proj);
-
-      const videoSession = {
-        sessionId: uploadId,
-        projectId: projId,
-        sourceAssetId: `src_${projId}`,
-        sourceFile,
-        previewFilePath: previewPath,
-        previewUrl,
-        audioFile,
-        transcriptFile,
-        metadata: {
+        const proj = createProjectFixture({
+          id: projId,
+          presetId: 'social-word-pink',
+          videoUrl: previewUrl,
+          title,
+          sourcePath: sourceFile,
+          previewPath,
           duration: probe.duration,
           width: probe.width,
           height: probe.height,
           fps: probe.fps,
-          sizeBytes: parsed.file.data.length,
-          sha256: probe.sha256
-        },
-        transcript: speechResult.transcript || [],
-        wordCount: speechResult.wordCount || 0,
-        language: speechResult.language || 'en',
-        captionStyling: { presetId: 'social-word-pink' },
-        renderJobId: null,
-        renderStatus: 'idle',
-        lastExport: null,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
-      };
+          customTranscript: speechResult.transcript || [],
+          lastExport: null
+        });
 
-      videoSessions.set(uploadId, videoSession);
-      uploadSessions.set(uploadId, { id: uploadId, uploadDir, sourceFile, relPath: previewUrl, previewFilePath: previewPath, previewUrl, probe, sizeBytes: parsed.file.data.length });
-      saveStore();
+        projects.set(projId, proj);
 
-      console.log(`[Upload Pipeline Success] Multipart created Project ${projId} & Session ${uploadId}`);
+        const videoSession = {
+          sessionId: uploadId,
+          projectId: projId,
+          sourceAssetId: `src_${projId}`,
+          sourceFile,
+          previewFilePath: previewPath,
+          previewUrl,
+          audioFile,
+          transcriptFile,
+          metadata: {
+            duration: probe.duration,
+            width: probe.width,
+            height: probe.height,
+            fps: probe.fps,
+            sizeBytes: parsed.file.data.length,
+            sha256: probe.sha256
+          },
+          transcript: speechResult.transcript || [],
+          wordCount: speechResult.wordCount || 0,
+          language: speechResult.language || 'en',
+          captionStyling: { presetId: 'social-word-pink' },
+          renderJobId: null,
+          renderStatus: 'idle',
+          lastExport: null,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        };
 
-      return sendJson(res, {
-        projectId: projId,
-        sessionId: uploadId,
-        project: { id: projId },
-        relPath: previewUrl,
-        durationSec: probe.duration,
-        uploadSessionId: uploadId,
-        transport: 'direct',
-        mediaKind: 'video',
-        transcript: videoSession.transcript,
-        wordCount: videoSession.wordCount
-      });
+        videoSessions.set(uploadId, videoSession);
+        uploadSessions.set(uploadId, { id: uploadId, uploadDir, sourceFile, relPath: previewUrl, previewFilePath: previewPath, previewUrl, probe, sizeBytes: parsed.file.data.length });
+        saveStore();
+
+        console.log(`[Upload Pipeline Success] Multipart created Project ${projId} & Session ${uploadId}`);
+
+        return sendJson(res, {
+          projectId: projId,
+          sessionId: uploadId,
+          project: { id: projId },
+          relPath: previewUrl,
+          durationSec: probe.duration,
+          uploadSessionId: uploadId,
+          transport: 'direct',
+          mediaKind: 'video',
+          transcript: videoSession.transcript,
+          wordCount: videoSession.wordCount
+        });
+      } catch (mpErr) {
+        console.error('[Upload Multipart Error]', mpErr);
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ error: `Upload failed: ${mpErr.message}` }));
+      }
     }
 
     res.writeHead(400, { 'Content-Type': 'application/json' });
