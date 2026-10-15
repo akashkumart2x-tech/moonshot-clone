@@ -518,6 +518,13 @@ function resolveCaptionStyle(project) {
     const isItalic = (official.desc && official.desc.toLowerCase().includes('italic')) || official.fontStyle === 'italic';
     const isBold = rawFont.includes('bold') || rawFont.includes('black') || rawFont === 'anton' || (official.strokePx && official.strokePx > 3) || (official.desc && official.desc.toLowerCase().includes('bold'));
 
+    let textColor = official.color || '#FFFFFF';
+    let shadowColor = '#000000';
+    if (textColor.startsWith('rgba(0,0,0') || textColor.startsWith('rgba(0, 0, 0')) {
+      shadowColor = textColor;
+      textColor = '#FFFFFF';
+    }
+
     base = {
       presetId: official.id,
       name: official.name,
@@ -525,14 +532,14 @@ function resolveCaptionStyle(project) {
       fontFamily: mappedFont,
       fontStyle: isItalic ? 'italic' : 'normal',
       fontSizePx: official.fontSizePx || 85,
-      color: official.color || '#FFFFFF',
+      color: textColor,
       emphasisColor: official.emphasisColor || '#FFE600',
       textTransform: official.textTransform || 'none',
       positionYPct: official.positionYPct !== undefined ? official.positionYPct : 0.75,
       strokePx: official.strokePx !== undefined ? official.strokePx : 4.5,
       strokeColor: official.strokeColor || '#141414',
       shadowPx: (official.category === 'social' || official.category === 'dynamic') ? 3 : 2,
-      shadowColor: '#000000',
+      shadowColor: shadowColor,
       captionEffect: official.captionEffect || 'none',
       animIn: official.animIn || 'none',
       isBold: isBold
@@ -608,14 +615,6 @@ function generateMultiLineHeroAss(project, videoWidth = 1080, videoHeight = 1920
   const heroY = Math.round(0.518 * videoHeight);
   const tailY = Math.round(0.588 * videoHeight);
 
-  let cleanedSpans = null;
-  try {
-    const cPath = path.join(__dirname, 'scratch', 'cleaned_dimension_spans.json');
-    if (fs.existsSync(cPath)) {
-      cleanedSpans = JSON.parse(fs.readFileSync(cPath, 'utf8'));
-    }
-  } catch (e) {}
-
   const header = `[Script Info]
 Title: Moonshot Multi-Line 3D Hero Export - dimension-story
 ScriptType: v4.00+
@@ -638,65 +637,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
   const dialogueLines = [];
 
-  if (cleanedSpans && Array.isArray(cleanedSpans.frontSpans) && cleanedSpans.frontSpans.length > 0) {
-    const allWords = transcript.flatMap(s => s.words || []);
-
-    // 1. Behind dialogue lines
-    if (Array.isArray(cleanedSpans.behindSpans)) {
-      cleanedSpans.behindSpans.forEach(b => {
-        const startAss = formatAssTime(b.start);
-        const endAss = formatAssTime(b.end);
-        let text = b.text || b.displayText || '';
-        if (b.hero) {
-          const bClean = b.hero.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
-          const bWord = allWords.find(w => w.start >= b.start - 0.4 && w.start <= b.end + 0.2 && (w.textLatn || w.text).toLowerCase().replace(/[^\p{L}\p{N}]/gu, '') === bClean);
-          if (bWord && bWord.userEdited) {
-            text = text.replace(new RegExp(b.hero.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'), bWord.textLatn || bWord.text);
-          }
-        }
-        if (text) {
-          dialogueLines.push(`Dialogue: 1,${startAss},${endAss},Behind,,0,0,0,,{\\pos(${cx},${behindY})}${text}`);
-        }
-      });
-    }
-
-    // 2. Front 3D Hero + Lead + Tail lines
-    cleanedSpans.frontSpans.forEach(f => {
-      const startAss = formatAssTime(f.start);
-      const endAss = formatAssTime(f.end);
-
-      // Dynamically look up word in current transcript to reflect manual spelling corrections & custom highlight colors
-      const heroClean = (f.hero || '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
-      const heroWord = allWords.find(w => w.start >= f.start - 0.35 && w.start <= f.end + 0.15 && (w.textLatn || w.text).toLowerCase().replace(/[^\p{L}\p{N}]/gu, '') === heroClean);
-
-      const heroText = heroWord ? (preferredScript === 'devanagari' ? heroWord.text : (heroWord.textLatn || heroWord.text)) : f.hero;
-      const heroColorHex = (heroWord && (heroWord.color || heroWord.style?.color)) ? (heroWord.color || heroWord.style?.color) : f.color;
-      const heroAssColor = hexToAssColor(heroColorHex, '&H005C7EF4&');
-
-      if (f.lead && f.lead.trim()) {
-        dialogueLines.push(`Dialogue: 2,${startAss},${endAss},Lead,,0,0,0,,{\\pos(${cx},${leadY})}${f.lead.trim()}`);
-      }
-
-      // 3D Extrusion Stack matching preview CSS text-shadow
-      dialogueLines.push(`Dialogue: 2,${startAss},${endAss},HeroShadow,,0,0,0,,{\\pos(${cx + 8},${heroY + 8})}${heroText}`);
-      dialogueLines.push(`Dialogue: 3,${startAss},${endAss},HeroMid,,0,0,0,,{\\pos(${cx + 4},${heroY + 4})}${heroText}`);
-      dialogueLines.push(`Dialogue: 4,${startAss},${endAss},HeroFace,,0,0,0,,{\\c${heroAssColor}\\pos(${cx},${heroY})}${heroText}`);
-
-      if (f.tail && f.tail.trim()) {
-        dialogueLines.push(`Dialogue: 2,${startAss},${endAss},Tail,,0,0,0,,{\\pos(${cx},${tailY})}${f.tail.trim()}`);
-      }
-    });
-
-    dialogueLines.sort((a, b) => {
-      const tA = a.split(',')[1];
-      const tB = b.split(',')[1];
-      return tA.localeCompare(tB);
-    });
-
-    return header + dialogueLines.join('\n') + '\n';
-  }
-
-  // Fallback if continuous spans not available
+  // Dynamic 3D Hero Generation directly from the project's actual transcript
   transcript.forEach((seg, idx) => {
     const segStart = seg.start;
     const segEnd = seg.end;
@@ -837,9 +778,9 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
       // Generate word-by-word active karaoke dialogue frames matching preview speaking progress
       for (let i = 0; i < words.length; i++) {
         const activeWord = words[i];
-        const wStart = Math.max(segStart, activeWord.start);
+        const wStart = (i === 0) ? Math.min(segStart, activeWord.start) : Math.max(segStart, activeWord.start);
         const nextWord = words[i + 1];
-        const wEnd = nextWord ? Math.max(wStart + 0.05, nextWord.start) : Math.max(wStart + 0.1, segEnd);
+        const wEnd = nextWord ? Math.max(wStart + 0.05, nextWord.start) : Math.max(wStart + 0.1, Math.max(activeWord.end, segEnd));
 
         const startAss = formatAssTime(wStart);
         const endAss = formatAssTime(wEnd);
@@ -863,10 +804,10 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             const manualColor = w.color || w.style?.color || style.emphasisColor;
             const assColor = parseColorToAss(manualColor, emphasisAssColor);
             const boldTag = (w.isBold || style.isBold) ? '\\b1' : '\\b0';
-            return `{\\c${assColor}${boldTag}}${rawText}{\\r\\c${primaryAssColor}${style.isBold ? '\\b1' : '\\b0'}}`;
+            return `{\\c${assColor}${boldTag}}${rawText}{\\c${primaryAssColor}${style.isBold ? '\\b1' : '\\b0'}}`;
           } else if (isActiveSpeaking) {
             const boldTag = '\\b1';
-            return `{\\c${emphasisAssColor}${boldTag}}${rawText}{\\r\\c${primaryAssColor}${style.isBold ? '\\b1' : '\\b0'}}`;
+            return `{\\c${emphasisAssColor}${boldTag}}${rawText}{\\c${primaryAssColor}${style.isBold ? '\\b1' : '\\b0'}}`;
           } else {
             return rawText;
           }
@@ -900,9 +841,9 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
           if (hasManualHighlight || (wordColor && wordColor.toUpperCase() !== style.color.toUpperCase())) {
             const assColor = parseColorToAss(wordColor, emphasisAssColor);
             const boldTag = isBold ? '\\b1' : '\\b0';
-            return `{\\c${assColor}${boldTag}}${rawText}{\\r\\c${primaryAssColor}${style.isBold ? '\\b1' : '\\b0'}}`;
+            return `{\\c${assColor}${boldTag}}${rawText}{\\c${primaryAssColor}${style.isBold ? '\\b1' : '\\b0'}}`;
           } else if (isBold && !style.isBold) {
-            return `{\\b1}${rawText}{\\r\\c${primaryAssColor}\\b0}`;
+            return `{\\b1}${rawText}{\\c${primaryAssColor}\\b0}`;
           } else {
             return rawText;
           }

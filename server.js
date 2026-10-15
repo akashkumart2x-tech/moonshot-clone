@@ -69,6 +69,14 @@ if (DATABASE_URL) {
           if (data.renderJobs) Object.entries(data.renderJobs).forEach(([k, v]) => renderJobs.set(k, v));
           console.log(`[Store] Synced ${projects.size} projects from Neon PostgreSQL.`);
         }
+
+        try {
+          const tokenRes = await pgPool.query("SELECT data FROM moonshot_store WHERE store_key = 'google_drive_tokens';");
+          if (tokenRes.rows.length > 0 && tokenRes.rows[0].data) {
+            gdrive.setTokens(tokenRes.rows[0].data);
+            console.log('[Store] Loaded Google Drive OAuth credentials from Neon PostgreSQL.');
+          }
+        } catch (tErr) {}
       } catch (e) {
         console.warn('[Store] Could not read master_store from PostgreSQL:', e.message);
       }
@@ -1115,11 +1123,59 @@ const server = http.createServer(async (req, res) => {
     fs.mkdirSync(jobDir, { recursive: true });
     const outputFile = path.join(jobDir, `moonshot_export_${jobId}.mp4`);
 
-    const sourceToRender = proj.source?.filePath;
-    if (!sourceToRender || !fs.existsSync(sourceToRender)) {
-      console.error(`[Export Error] Source file does not exist: ${sourceToRender}`);
+    function resolveSourceVideo(p) {
+      if (!p) return null;
+      const candidates = [];
+      if (p.source?.filePath) candidates.push(p.source.filePath);
+      if (p.source?.previewFilePath) candidates.push(p.source.previewFilePath);
+
+      // Check if path has uploads/subfolder relative path (fixes Windows vs Linux paths)
+      const raw = p.source?.filePath || '';
+      const match = raw.match(/uploads[\\/].*$/i);
+      if (match) {
+        candidates.push(path.join(__dirname, match[0]));
+        candidates.push(path.join(process.cwd(), match[0]));
+        candidates.push(path.resolve(match[0]));
+      }
+
+      // Check all video sessions for this project
+      for (const sess of videoSessions.values()) {
+        if (sess.projectId === p.id || sess.sessionId === p.id) {
+          if (sess.sourceFile) candidates.push(sess.sourceFile);
+          if (sess.previewFilePath) candidates.push(sess.previewFilePath);
+          if (sess.previewUrl) {
+            candidates.push(path.join(__dirname, sess.previewUrl.replace(/^\//, '')));
+          }
+          const sMatch = (sess.sourceFile || '').match(/uploads[\\/].*$/i);
+          if (sMatch) {
+            candidates.push(path.join(__dirname, sMatch[0]));
+          }
+        }
+      }
+
+      // Also check proj.source.previewUrl
+      if (p.source?.previewUrl) {
+        candidates.push(path.join(__dirname, p.source.previewUrl.replace(/^\//, '')));
+      }
+
+      // Fallback demo reel if proj_demo_1
+      if (p.id === 'proj_demo_1') {
+        candidates.push(path.join(__dirname, 'assets', 'demo_reel.mp4'));
+      }
+
+      for (const c of candidates) {
+        if (c && fs.existsSync(c)) {
+          return c;
+        }
+      }
+      return null;
+    }
+
+    const sourceToRender = resolveSourceVideo(proj);
+    if (!sourceToRender) {
+      console.error(`[Export Error] Source file does not exist on disk for project ${projId}`);
       res.writeHead(400, { 'Content-Type': 'application/json' });
-      return res.end(JSON.stringify({ error: `Source video file missing on disk: ${sourceToRender}` }));
+      return res.end(JSON.stringify({ error: `Source video file missing on disk for project ${projId}` }));
     }
 
     console.log(`[Export] Rendering project ${projId} (Preset: ${proj.presetId || 'social-word-pink'}, Script: ${proj.scriptPreference || 'latn'}, Source: ${sourceToRender}) -> ${outputFile}...`);
@@ -1162,6 +1218,25 @@ const server = http.createServer(async (req, res) => {
           sess.exportOutputFile = outputFile;
           sess.exportDownloadUrl = job.downloadUrl;
         }
+      }
+
+      // Asynchronously upload export to Google Drive if authorized
+      const proto = req.headers['x-forwarded-proto'] || (req.connection?.encrypted ? 'https' : 'http');
+      const host = req.headers.host || `localhost:${PORT}`;
+      const currentRedirectUri = `${proto}://${host}/api/auth/google/callback`;
+
+      if (gdrive.isConnected()) {
+        gdrive.getOrCreateFolder('Moonshot', currentRedirectUri).then(async (folder) => {
+          const driveFile = await gdrive.uploadMediaFile(folder.id, `moonshot_export_${jobId}.mp4`, outputFile, 'video/mp4', currentRedirectUri);
+          job.gdriveLink = driveFile.webViewLink;
+          for (const sess of videoSessions.values()) {
+            if (sess.projectId === projId) {
+              sess.gdriveLink = driveFile.webViewLink;
+            }
+          }
+          console.log(`[Google Drive Auto-Sync] Job ${jobId} uploaded to Drive: ${driveFile.webViewLink}`);
+          saveStore();
+        }).catch(err => console.warn('[Google Drive Auto-Sync Warning]', err.message));
       }
 
       saveStore();
@@ -1214,6 +1289,48 @@ const server = http.createServer(async (req, res) => {
     res.setHeader('Content-Disposition', `attachment; filename="moonshot_export_${jobId}.mp4"`);
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
     return streamVideo(job.outputFile, req, res);
+  }
+
+  // API 16.1: Manual Google Drive Upload for Export (/api/render/upload-to-drive/:jobId)
+  if (pathname.startsWith('/api/render/upload-to-drive/')) {
+    const jobId = pathname.replace('/api/render/upload-to-drive/', '').replace(/\?.*$/, '');
+    const job = renderJobs.get(jobId);
+    if (!job || !fs.existsSync(job.outputFile)) {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      return res.end(JSON.stringify({ error: 'Export file not found' }));
+    }
+
+    const proto = req.headers['x-forwarded-proto'] || (req.connection?.encrypted ? 'https' : 'http');
+    const host = req.headers.host || `localhost:${PORT}`;
+    const redirectUri = `${proto}://${host}/api/auth/google/callback`;
+
+    if (!gdrive.isConnected()) {
+      const authUrl = gdrive.getAuthUrl(redirectUri, `job_${jobId}`);
+      return sendJson(res, { connected: false, authRequired: true, authUrl });
+    }
+
+    try {
+      const folder = await gdrive.getOrCreateFolder('Moonshot', redirectUri);
+      const driveFile = await gdrive.uploadMediaFile(folder.id, `moonshot_export_${jobId}.mp4`, job.outputFile, 'video/mp4', redirectUri);
+      job.gdriveLink = driveFile.webViewLink;
+      saveStore();
+      return sendJson(res, { success: true, gdriveLink: driveFile.webViewLink, fileId: driveFile.id });
+    } catch (err) {
+      console.error('[Google Drive Upload Error]', err);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      return res.end(JSON.stringify({ error: err.message }));
+    }
+  }
+
+  // API 16.2: Google Drive Connection Status & Auth URL (/api/gdrive/status)
+  if (pathname === '/api/gdrive/status') {
+    const proto = req.headers['x-forwarded-proto'] || (req.connection?.encrypted ? 'https' : 'http');
+    const host = req.headers.host || `localhost:${PORT}`;
+    const redirectUri = `${proto}://${host}/api/auth/google/callback`;
+    return sendJson(res, {
+      connected: gdrive.isConnected(),
+      authUrl: gdrive.getAuthUrl(redirectUri)
+    });
   }
 
   // API 17: Templates Discovery
@@ -1299,8 +1416,11 @@ const server = http.createServer(async (req, res) => {
   }
 
   // API: Google OAuth Login for Google Drive Sync
-  if (pathname === '/api/auth/google/login') {
-    const authUrl = gdrive.getAuthUrl();
+  if (pathname === '/api/auth/google/login' || pathname === '/api/drive/connect') {
+    const proto = req.headers['x-forwarded-proto'] || (req.connection?.encrypted ? 'https' : 'http');
+    const host = req.headers.host || `localhost:${PORT}`;
+    const redirectUri = `${proto}://${host}/api/auth/google/callback`;
+    const authUrl = gdrive.getAuthUrl(redirectUri);
     res.writeHead(302, { Location: authUrl });
     return res.end();
   }
@@ -1309,6 +1429,9 @@ const server = http.createServer(async (req, res) => {
   if (pathname === '/api/auth/google/callback') {
     const code = parsedUrl.searchParams.get('code');
     const error = parsedUrl.searchParams.get('error');
+    const proto = req.headers['x-forwarded-proto'] || (req.connection?.encrypted ? 'https' : 'http');
+    const host = req.headers.host || `localhost:${PORT}`;
+    const redirectUri = `${proto}://${host}/api/auth/google/callback`;
 
     if (error) {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
@@ -1327,8 +1450,21 @@ const server = http.createServer(async (req, res) => {
     }
 
     try {
-      await gdrive.handleCallback(code);
-      const folder = await gdrive.getOrCreateFolder('Moonshot');
+      const { tokens } = await gdrive.handleCallback(code, redirectUri);
+      if (pgPool) {
+        try {
+          await pgPool.query(`
+            INSERT INTO moonshot_store (store_key, data, updated_at)
+            VALUES ('google_drive_tokens', $1, NOW())
+            ON CONFLICT (store_key) DO UPDATE SET data = $1, updated_at = NOW();
+          `, [tokens]);
+          console.log('[Store] Persisted Google Drive OAuth credentials to Neon PostgreSQL.');
+        } catch (dbErr) {
+          console.warn('[Store] Cloud DB token persistence warning:', dbErr.message);
+        }
+      }
+
+      const folder = await gdrive.getOrCreateFolder('Moonshot', redirectUri);
 
       const linksContent = `=====================================================
 MOONSHOT REPLICA - CLOUD DEPLOYMENT & PORTAL LINKS

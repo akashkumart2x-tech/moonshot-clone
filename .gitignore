@@ -8,7 +8,10 @@ rebuilt_test_runs/
 test_verification_runs/
 .env
 .env.local
+google_credentials.json
+data/google_drive_tokens.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .DS_Store
+

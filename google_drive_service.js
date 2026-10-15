@@ -3,43 +3,62 @@ const path = require('path');
 const { google } = require('googleapis');
 const { Readable } = require('stream');
 
-let CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
-let CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
-const REDIRECT_URI = process.env.GOOGLE_REDIRECT_URI || 'http://localhost:3000/api/auth/google/callback';
+let CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '';
+let CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || '';
 
-if (!CLIENT_ID || !CLIENT_SECRET) {
-  const localConfigPath = path.join(__dirname, '..', 'copilotkit-app', 'data', 'oauth_config.json');
-  if (fs.existsSync(localConfigPath)) {
-    try {
-      const cfg = JSON.parse(fs.readFileSync(localConfigPath, 'utf8'));
-      CLIENT_ID = cfg.clientId;
-      CLIENT_SECRET = cfg.clientSecret;
-    } catch (e) {}
+// Load from local ignored credentials file if present
+try {
+  const credsPath = path.join(__dirname, 'google_credentials.json');
+  if ((!CLIENT_ID || !CLIENT_SECRET) && fs.existsSync(credsPath)) {
+    const creds = JSON.parse(fs.readFileSync(credsPath, 'utf8'));
+    CLIENT_ID = CLIENT_ID || creds.clientId || creds.client_id || '';
+    CLIENT_SECRET = CLIENT_SECRET || creds.clientSecret || creds.client_secret || '';
   }
-}
+} catch (e) {}
+
+const DEFAULT_REDIRECT_URI = process.env.GOOGLE_REDIRECT_URI || 'https://moonshot-video-editor.onrender.com/api/auth/google/callback';
 
 const TOKENS_PATH = path.join(__dirname, 'data', 'google_drive_tokens.json');
+let inMemoryTokens = null;
 
 const SCOPES = [
   'https://www.googleapis.com/auth/drive.file',
   'https://www.googleapis.com/auth/userinfo.email'
 ];
 
-function getOAuthClient() {
-  const oauth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
+function setTokens(tokens) {
+  inMemoryTokens = tokens;
+  try {
+    fs.mkdirSync(path.dirname(TOKENS_PATH), { recursive: true });
+    fs.writeFileSync(TOKENS_PATH, JSON.stringify(tokens, null, 2), 'utf8');
+  } catch (e) {
+    console.warn('[Google Drive] Could not write tokens to disk:', e.message);
+  }
+}
+
+function getTokens() {
+  if (inMemoryTokens) return inMemoryTokens;
   if (fs.existsSync(TOKENS_PATH)) {
     try {
-      const tokens = JSON.parse(fs.readFileSync(TOKENS_PATH, 'utf8'));
-      oauth2Client.setCredentials(tokens);
-    } catch (e) {
-      console.warn('[Google Drive] Could not parse tokens:', e.message);
-    }
+      inMemoryTokens = JSON.parse(fs.readFileSync(TOKENS_PATH, 'utf8'));
+      return inMemoryTokens;
+    } catch (e) {}
+  }
+  return null;
+}
+
+function getOAuthClient(redirectUri = null) {
+  const redirect = redirectUri || process.env.GOOGLE_REDIRECT_URI || DEFAULT_REDIRECT_URI;
+  const oauth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, redirect);
+  const tokens = getTokens();
+  if (tokens) {
+    oauth2Client.setCredentials(tokens);
   }
   return oauth2Client;
 }
 
-function getAuthUrl(state = '') {
-  const client = getOAuthClient();
+function getAuthUrl(redirectUri = null, state = '') {
+  const client = getOAuthClient(redirectUri);
   return client.generateAuthUrl({
     access_type: 'offline',
     prompt: 'consent',
@@ -49,28 +68,22 @@ function getAuthUrl(state = '') {
   });
 }
 
-async function handleCallback(code) {
-  const client = getOAuthClient();
+async function handleCallback(code, redirectUri = null) {
+  const client = getOAuthClient(redirectUri);
   const { tokens } = await client.getToken(code);
   client.setCredentials(tokens);
-  fs.mkdirSync(path.dirname(TOKENS_PATH), { recursive: true });
-  fs.writeFileSync(TOKENS_PATH, JSON.stringify(tokens, null, 2), 'utf8');
-  console.log('[Google Drive] Saved new OAuth tokens to disk.');
-  return client;
+  setTokens(tokens);
+  console.log('[Google Drive] Saved and activated new OAuth tokens.');
+  return { client, tokens };
 }
 
 function isConnected() {
-  if (!fs.existsSync(TOKENS_PATH)) return false;
-  try {
-    const tokens = JSON.parse(fs.readFileSync(TOKENS_PATH, 'utf8'));
-    return !!(tokens.access_token || tokens.refresh_token);
-  } catch {
-    return false;
-  }
+  const tokens = getTokens();
+  return !!(tokens && (tokens.access_token || tokens.refresh_token));
 }
 
-async function getOrCreateFolder(folderName = 'Moonshot') {
-  const client = getOAuthClient();
+async function getOrCreateFolder(folderName = 'Moonshot', redirectUri = null) {
+  const client = getOAuthClient(redirectUri);
   const drive = google.drive({ version: 'v3', auth: client });
 
   // Check if folder already exists
@@ -101,8 +114,8 @@ async function getOrCreateFolder(folderName = 'Moonshot') {
   return createRes.data;
 }
 
-async function uploadTextFile(folderId, fileName, content, mimeType = 'text/plain') {
-  const client = getOAuthClient();
+async function uploadTextFile(folderId, fileName, content, mimeType = 'text/plain', redirectUri = null) {
+  const client = getOAuthClient(redirectUri);
   const drive = google.drive({ version: 'v3', auth: client });
 
   const stream = new Readable();
@@ -129,10 +142,41 @@ async function uploadTextFile(folderId, fileName, content, mimeType = 'text/plai
   return file.data;
 }
 
+async function uploadMediaFile(folderId, fileName, filePath, mimeType = 'video/mp4', redirectUri = null) {
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`File does not exist on disk: ${filePath}`);
+  }
+
+  const client = getOAuthClient(redirectUri);
+  const drive = google.drive({ version: 'v3', auth: client });
+
+  const fileMetadata = {
+    name: fileName,
+    parents: [folderId]
+  };
+
+  const media = {
+    mimeType,
+    body: fs.createReadStream(filePath)
+  };
+
+  const file = await drive.files.create({
+    resource: fileMetadata,
+    media: media,
+    fields: 'id, name, webViewLink, webContentLink, size'
+  });
+
+  console.log(`[Google Drive] Uploaded media '${fileName}' (${fs.statSync(filePath).size} bytes) ->`, file.data.id, file.data.webViewLink);
+  return file.data;
+}
+
 module.exports = {
   getAuthUrl,
   handleCallback,
   isConnected,
   getOrCreateFolder,
-  uploadTextFile
+  uploadTextFile,
+  uploadMediaFile,
+  setTokens,
+  getTokens
 };

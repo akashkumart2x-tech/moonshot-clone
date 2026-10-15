@@ -10,7 +10,11 @@ RUN apt-get update -o Acquire::Check-Valid-Until=false && apt-get install -y --n
     python3-requests \
     python-is-python3 \
     fonts-dejavu-core \
+    fonts-dejavu-extra \
     fonts-liberation \
+    fonts-noto-core \
+    fonts-noto-ui-core \
+    fonts-roboto \
     fontconfig \
     ca-certificates \
     curl \

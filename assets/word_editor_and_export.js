@@ -198,6 +198,10 @@
           <span>Edit Words & Highlights</span>
           <span id="ms-word-count-badge" style="background:rgba(255,255,255,0.12);padding:2px 6px;border-radius:10px;font-size:11px;">0</span>
         </button>
+        <button type="button" class="ms-floating-pill" id="ms-pill-gdrive" style="background:rgba(66,133,244,0.18);border-color:#4285F4;color:#93c5fd;" title="Google Drive Auto-Backup & Storage">
+          <span>☁️</span>
+          <span id="ms-gdrive-dock-text">Connect Drive</span>
+        </button>
         <button type="button" class="ms-floating-pill ms-primary-pill" id="ms-pill-open-export">
           <span>🚀</span>
           <span>Export Video</span>
@@ -413,11 +417,27 @@
             <!-- Video Player on Complete -->
             <div id="ms-export-player-wrap" style="display:none;flex-direction:column;gap:10px;">
               <video id="ms-export-video-player" controls class="ms-video-preview-player"></video>
-              <div style="display:flex;gap:10px;">
-                <a id="ms-download-link" href="#" download class="ms-export-action-btn" style="text-decoration:none;background:#10b981;border-color:#34d399;">
+              <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                <a id="ms-download-link" href="#" download class="ms-export-action-btn" style="flex:1;text-decoration:none;background:#10b981;border-color:#34d399;">
                   <span>⬇️</span>
                   <span>DOWNLOAD VIDEO (MP4)</span>
                 </a>
+                <a id="ms-gdrive-link" href="#" target="_blank" class="ms-export-action-btn" style="flex:1;text-decoration:none;background:#2563eb;border-color:#3b82f6;display:none;">
+                  <span>☁️</span>
+                  <span>OPEN IN GOOGLE DRIVE</span>
+                </a>
+              </div>
+              <div id="ms-gdrive-backup-card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 14px;border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;margin-top:4px;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <span style="font-size:16px;">☁️</span>
+                  <div>
+                    <div style="font-weight:600;color:#f8fafc;" id="ms-gdrive-status-headline">Google Drive Auto-Sync</div>
+                    <div style="color:#94a3b8;font-size:11px;" id="ms-gdrive-status-subline">Checking connection...</div>
+                  </div>
+                </div>
+                <button type="button" id="ms-btn-connect-drive" class="ms-btn" style="font-size:11px;padding:4px 10px;background:#4285F4;color:#fff;border-color:#4285F4;">
+                  Connect Drive
+                </button>
               </div>
             </div>
 
@@ -964,6 +984,34 @@
               btn.disabled = false;
               btn.innerHTML = '<span>⚡</span><span>Re-render Video</span>';
             }
+
+            // Google Drive Auto-Sync UI Update
+            const gdriveLink = document.getElementById('ms-gdrive-link');
+            const gdriveSubline = document.getElementById('ms-gdrive-status-subline');
+            if (job.gdriveLink) {
+              if (gdriveLink) {
+                gdriveLink.href = job.gdriveLink;
+                gdriveLink.style.display = 'inline-flex';
+              }
+              if (gdriveSubline) {
+                gdriveSubline.innerHTML = `Saved in Google Drive: <a href="${job.gdriveLink}" target="_blank" style="color:#60a5fa;text-decoration:underline;">Open in Drive</a>`;
+              }
+            } else if (gdriveStatus && gdriveStatus.connected) {
+              if (gdriveSubline) gdriveSubline.innerText = 'Syncing render to Google Drive...';
+              fetch(`/api/render/upload-to-drive/${jobId}`, { method: 'POST' })
+                .then(r => r.json())
+                .then(d => {
+                  if (d.gdriveLink) {
+                    if (gdriveLink) {
+                      gdriveLink.href = d.gdriveLink;
+                      gdriveLink.style.display = 'inline-flex';
+                    }
+                    if (gdriveSubline) {
+                      gdriveSubline.innerHTML = `Saved in Google Drive: <a href="${d.gdriveLink}" target="_blank" style="color:#60a5fa;text-decoration:underline;">Open in Drive</a>`;
+                    }
+                  }
+                }).catch(err => console.warn('[Auto-Upload to Drive]', err));
+            }
           } else if (job.status === 'failed') {
             clearInterval(renderPollTimer);
             statusText.innerText = 'Render failed: ' + (job.error || 'Unknown error');
@@ -978,8 +1026,60 @@
     }, 800);
   }
 
+  let gdriveStatus = { connected: false, authUrl: null };
+
+  async function checkGoogleDriveStatus() {
+    try {
+      const res = await fetch('/api/gdrive/status');
+      if (res.ok) {
+        gdriveStatus = await res.json();
+        const pillText = document.getElementById('ms-gdrive-dock-text');
+        const headline = document.getElementById('ms-gdrive-status-headline');
+        const subline = document.getElementById('ms-gdrive-status-subline');
+        const connectBtn = document.getElementById('ms-btn-connect-drive');
+
+        if (gdriveStatus.connected) {
+          if (pillText) pillText.innerText = 'Drive: Active ✓';
+          if (headline) headline.innerText = 'Google Drive: Connected';
+          if (subline && !subline.innerHTML.includes('Open in Drive')) {
+            subline.innerText = 'Exports automatically saved to "Moonshot" folder in your Drive';
+          }
+          if (connectBtn) {
+            connectBtn.innerText = 'Connected ✓';
+            connectBtn.style.background = '#10b981';
+            connectBtn.style.borderColor = '#10b981';
+          }
+        } else {
+          if (pillText) pillText.innerText = 'Connect Drive';
+          if (headline) headline.innerText = 'Backup Exports to Google Drive';
+          if (subline && !subline.innerHTML.includes('Open in Drive')) {
+            subline.innerText = 'Never lose renders — connects directly to your Drive';
+          }
+          if (connectBtn) {
+            connectBtn.innerText = 'Connect Drive';
+            connectBtn.style.background = '#4285F4';
+            connectBtn.style.borderColor = '#4285F4';
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('[GDrive Status Check]', e);
+    }
+  }
+
+  function connectGoogleDrive() {
+    const url = gdriveStatus.authUrl || '/api/drive/connect';
+    window.open(url, '_blank', 'width=600,height=700');
+    setTimeout(checkGoogleDriveStatus, 4000);
+    setTimeout(checkGoogleDriveStatus, 8000);
+  }
+
   // Bind All Event Handlers
   function bindEvents() {
+    // Google Drive Connect Handlers
+    document.getElementById('ms-pill-gdrive')?.addEventListener('click', connectGoogleDrive);
+    document.getElementById('ms-btn-connect-drive')?.addEventListener('click', connectGoogleDrive);
+
     // Open Word Drawer
     document.getElementById('ms-pill-open-words')?.addEventListener('click', openWordDrawer);
     document.getElementById('ms-close-drawer')?.addEventListener('click', closeWordDrawer);
@@ -1189,6 +1289,7 @@
       renderCaptionsList();
       syncWithEditorStore();
     });
+    checkGoogleDriveStatus();
 
     // Poll every 2s for top bar button injection if React re-rendered header
     setInterval(injectTopBarButton, 2000);
