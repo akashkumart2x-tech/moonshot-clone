@@ -3,11 +3,11 @@
 
 FROM node:20-bullseye-slim
 
-# Install system dependencies: FFmpeg (with libass enabled), Python3, Fontconfig, and standard fonts
+# Install system dependencies: FFmpeg (with libass enabled), Python3, python3-requests, Fontconfig, and standard fonts
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
     python3 \
-    python3-pip \
+    python3-requests \
     python-is-python3 \
     fonts-dejavu-core \
     fonts-liberation \
@@ -18,32 +18,25 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-# Install Python requirements for high-accuracy Groq speech recognition
-RUN pip3 install --no-cache-dir requests
-
 # Copy dependency manifests
 COPY package*.json ./
 
 # Install production dependencies
-RUN npm install --production
+RUN npm install --omit=dev
 
-# Copy application code
+# Copy application source code
 COPY . .
 
 # Ensure storage directories exist and refresh font cache
 RUN mkdir -p uploads exports data scratch && \
     fc-cache -fv
 
-# Cloud hosting environment variables
-ENV PORT=3000
+# Environment defaults
 ENV NODE_ENV=production
 ENV PYTHONIOENCODING=utf-8
 ENV PYTHONUTF8=1
 
-EXPOSE 3000
-
-# Healthcheck to ensure container is healthy
-HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
-  CMD curl -f http://localhost:${PORT}/ || exit 1
+# Expose Render standard port (10000) and local port (3000)
+EXPOSE 10000 3000
 
 CMD ["node", "server.js"]

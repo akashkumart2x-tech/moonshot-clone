@@ -31,26 +31,36 @@ const videoSessions = new Map();
 const renderJobs = new Map();
 
 // Cloud database persistence (Neon PostgreSQL)
-let pgClient = null;
+let pgPool = null;
 let pgConnected = false;
 const DATABASE_URL = process.env.DATABASE_URL;
 
 if (DATABASE_URL) {
   try {
-    const { Client } = require('pg');
-    pgClient = new Client({ connectionString: DATABASE_URL });
-    pgClient.connect().then(async () => {
+    const { Pool } = require('pg');
+    pgPool = new Pool({
+      connectionString: DATABASE_URL,
+      max: 5,
+      idleTimeoutMillis: 30000,
+      connectionTimeoutMillis: 10000,
+      ssl: { rejectUnauthorized: false }
+    });
+
+    pgPool.on('error', (err) => {
+      console.warn('[Store] PostgreSQL background pool error (safe):', err.message);
+    });
+
+    pgPool.query(`
+      CREATE TABLE IF NOT EXISTS moonshot_store (
+        store_key VARCHAR(64) PRIMARY KEY,
+        data JSONB NOT NULL,
+        updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+      );
+    `).then(async () => {
       pgConnected = true;
-      console.log('[Store] Connected to PostgreSQL cloud database (Neon).');
-      await pgClient.query(`
-        CREATE TABLE IF NOT EXISTS moonshot_store (
-          store_key VARCHAR(64) PRIMARY KEY,
-          data JSONB NOT NULL,
-          updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-        );
-      `);
+      console.log('[Store] Connected to PostgreSQL cloud database (Neon Pool).');
       try {
-        const res = await pgClient.query("SELECT data FROM moonshot_store WHERE store_key = 'master_store';");
+        const res = await pgPool.query("SELECT data FROM moonshot_store WHERE store_key = 'master_store';");
         if (res.rows.length > 0 && res.rows[0].data) {
           const data = res.rows[0].data;
           if (data.projects) Object.entries(data.projects).forEach(([k, v]) => projects.set(k, v));
@@ -86,7 +96,7 @@ function saveStore() {
     console.warn('[Store] Failed to save store:', e.message);
   }
 
-  if (pgConnected && pgClient) {
+  if (pgConnected && pgPool) {
     clearTimeout(savePgTimeout);
     savePgTimeout = setTimeout(async () => {
       try {
@@ -96,7 +106,7 @@ function saveStore() {
           ON CONFLICT (store_key)
           DO UPDATE SET data = EXCLUDED.data, updated_at = NOW();
         `;
-        await pgClient.query(query, ['master_store', data]);
+        await pgPool.query(query, ['master_store', data]);
       } catch (err) {
         console.warn('[Store] Cloud DB sync warning:', err.message);
       }
@@ -1466,12 +1476,11 @@ Generated automatically on 2026-10-14
   fs.createReadStream(fallback).pipe(res);
 });
 
-// Dual-stack listen (IPv4 and IPv6)
-server.listen(PORT, () => {
+// Listen on all network interfaces (IPv4/IPv6 container support)
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`\n  ======================================================`);
-  console.log(`  🚀 Moonshot Rebuilt Server Active!`);
+  console.log(`  🚀 Moonshot Rebuilt Server Active on 0.0.0.0:${PORT}!`);
   console.log(`  ➜ Localhost: http://localhost:${PORT}`);
-  console.log(`  ➜ IPv4:      http://127.0.0.1:${PORT}`);
   console.log(`  ➜ Studio:    http://localhost:${PORT}/studio/proj_demo_1`);
   console.log(`  ======================================================\n`);
 });
