@@ -71,10 +71,19 @@ if (DATABASE_URL) {
         }
 
         try {
+          const credRes = await pgPool.query("SELECT data FROM moonshot_store WHERE store_key = 'google_oauth_credentials';");
+          if (credRes.rows.length > 0 && credRes.rows[0].data) {
+            const creds = credRes.rows[0].data;
+            if (creds.clientId && creds.clientSecret) {
+              gdrive.setCredentials(creds.clientId, creds.clientSecret);
+              console.log('[Store] Loaded Google OAuth app credentials from Neon PostgreSQL.');
+            }
+          }
+
           const tokenRes = await pgPool.query("SELECT data FROM moonshot_store WHERE store_key = 'google_drive_tokens';");
           if (tokenRes.rows.length > 0 && tokenRes.rows[0].data) {
             gdrive.setTokens(tokenRes.rows[0].data);
-            console.log('[Store] Loaded Google Drive OAuth credentials from Neon PostgreSQL.');
+            console.log('[Store] Loaded Google Drive user tokens from Neon PostgreSQL.');
           }
         } catch (tErr) {}
       } catch (e) {

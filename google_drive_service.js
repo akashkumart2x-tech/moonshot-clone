@@ -170,6 +170,11 @@ async function uploadMediaFile(folderId, fileName, filePath, mimeType = 'video/m
   return file.data;
 }
 
+function setCredentials(clientId, clientSecret) {
+  if (clientId) CLIENT_ID = clientId;
+  if (clientSecret) CLIENT_SECRET = clientSecret;
+}
+
 module.exports = {
   getAuthUrl,
   handleCallback,
@@ -178,5 +183,6 @@ module.exports = {
   uploadTextFile,
   uploadMediaFile,
   setTokens,
-  getTokens
+  getTokens,
+  setCredentials
 };
